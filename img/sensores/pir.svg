@@ -1,0 +1,17 @@
+<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf1e3"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="376" height="256" rx="16" fill="url(#g)" stroke="#d6d6d6" stroke-width="2"/>
+  
+<circle cx="130" cy="95" r="30" fill="#e8e8e8" stroke="#2b2b2b" stroke-width="4"/>
+<circle cx="130" cy="95" r="14" fill="#c9d6e0" stroke="#2b2b2b" stroke-width="2"/>
+<path d="M 130 61 A 34 34 0 0 1 130 129" fill="none" stroke="#e0a63f" stroke-width="4"/><path d="M 130 47 A 48 48 0 0 1 130 143" fill="none" stroke="#e0a63f" stroke-width="4"/>
+<circle cx="270" cy="70" r="12" fill="#2b2b2b"/>
+<path d="M270 85 L270 130 M255 100 L270 110 L285 100 M270 130 L255 150 M270 130 L285 150" stroke="#2b2b2b" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <text x="190.0" y="244" font-family="Gill Sans, Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#333333">PIR HC-SR501</text>
+</svg>

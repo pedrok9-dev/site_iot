@@ -1,0 +1,16 @@
+<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e7f5e7"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="376" height="256" rx="16" fill="url(#g)" stroke="#d6d6d6" stroke-width="2"/>
+  
+<rect x="150" y="90" width="60" height="55" rx="10" fill="#d7ead7" stroke="#2b2b2b" stroke-width="4"/>
+<rect x="165" y="70" width="30" height="24" rx="6" fill="#9fcf9f" stroke="#2b2b2b" stroke-width="3"/>
+<path d="M230 60 a20 20 0 0 1 15-30 a25 25 0 0 1 48 -5 a18 18 0 0 1 12 33 z" fill="#bcd8bc" stroke="#2b2b2b" stroke-width="3" opacity="0.85"/>
+<text x="60" y="185" font-size="16" fill="#2b2b2b" font-weight="bold">AQ</text>
+
+  <text x="190.0" y="244" font-family="Gill Sans, Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#333333">MQ-135</text>
+</svg>

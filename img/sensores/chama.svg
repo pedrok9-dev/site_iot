@@ -1,0 +1,14 @@
+<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdece4"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="376" height="256" rx="16" fill="url(#g)" stroke="#d6d6d6" stroke-width="2"/>
+  
+<path d="M200 150 C 170 130, 175 100, 195 70 C 190 95, 210 100, 210 80 C 225 100, 230 130, 200 150 Z" fill="#e0703f" stroke="#2b2b2b" stroke-width="3"/>
+<path d="M200 140 C 188 128, 190 110, 200 95 C 198 112, 210 112, 208 100 C 216 112, 218 128, 200 140 Z" fill="#f2c94c"/>
+
+  <text x="190.0" y="244" font-family="Gill Sans, Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#333333">Sensor de Chama IR</text>
+</svg>

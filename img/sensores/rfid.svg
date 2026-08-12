@@ -1,0 +1,15 @@
+<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8ecfd"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="376" height="256" rx="16" fill="url(#g)" stroke="#d6d6d6" stroke-width="2"/>
+  
+<rect x="90" y="70" width="70" height="50" rx="6" fill="#3f6fe0" stroke="#2b2b2b" stroke-width="3"/>
+<path d="M 200 85 A 10 10 0 0 1 200 105" fill="none" stroke="#3f6fe0" stroke-width="4"/><path d="M 200 69 A 26 26 0 0 1 200 121" fill="none" stroke="#3f6fe0" stroke-width="4"/><path d="M 200 53 A 42 42 0 0 1 200 137" fill="none" stroke="#3f6fe0" stroke-width="4"/>
+<rect x="255" y="80" width="60" height="38" rx="4" fill="#e8e8e8" stroke="#2b2b2b" stroke-width="3"/>
+
+  <text x="190.0" y="244" font-family="Gill Sans, Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#333333">RFID MFRC522</text>
+</svg>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./java.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
+    <title>Comunicação Industrial e Integração com IoT</title>
+</head>
+<body>
+    <header>
+    <div class="off-screen-menu">
+      <ul>
+        <li><a href="./index.html">Início</a></li>
+        <li><a href="./robos.html">Robôs Industriais</a></li>
+        <li><a href="./sensores.html">Sensores IoT</a></li>
+        <li><a href="./arduino.html">Arduino</a></li>
+        <li><a href="./comunicacao.html">Comunicação Industrial</a></li>
+      </ul>
+    </div>
+    <nav>
+      <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h1 class="marca">NexTheis IoT</h1>
+    </nav>
+    </header>
+    <br><br>
+    <main>
+      <h1 class="titulo">Comunicação Industrial e Integração com IoT</h1>
+      <p class="subtitulo">Como robôs e sensores trocam informações entre si e com sistemas de supervisão e controle</p>
+
+      <section class="p0">
+        <p class="p1">Por que a comunicação de dados é essencial na automação?</p>
+        <br>
+        <p class="p2">Um robô ou sensor isolado, sem comunicação, só consegue executar tarefas fixas e locais. Quando conectados a uma rede industrial, esses dispositivos podem trocar dados com Controladores Lógicos Programáveis (CLPs), sistemas SCADA (supervisão e aquisição de dados), plataformas MES (execução da manufatura) e serviços em nuvem — permitindo monitoramento remoto, controle coordenado entre máquinas e tomada de decisão baseada em dados em tempo real.</p>
+        <br>
+        <p class="p2">Essa integração é o que transforma uma fábrica automatizada tradicional em uma <strong>fábrica inteligente (smart factory)</strong>, alinhada aos conceitos da Indústria 4.0.</p>
+      </section>
+
+      <section class="p0">
+        <p class="p1">Principais Protocolos de Comunicação Industrial</p>
+        <br>
+
+        <div class="protocolo-card">
+          <h3>🔗 Ethernet Industrial</h3>
+          <p class="p2">É a adaptação do padrão Ethernet convencional (usado em redes de computadores) para o ambiente industrial, com cabos, conectores e switches reforçados contra vibração, poeira e interferência eletromagnética. Serve como a "estrada" física sobre a qual protocolos como Profinet e EtherNet/IP trafegam. Oferece alta velocidade (100 Mbps a 1 Gbps) e é a base da maioria das redes industriais modernas.</p>
+        </div>
+
+        <div class="protocolo-card">
+          <h3>⚙️ Profinet</h3>
+          <p class="p2">Protocolo de comunicação industrial desenvolvido pela organização PROFIBUS &amp; PROFINET International (PI), muito utilizado para conectar CLPs, robôs, sensores e atuadores em tempo real determinístico — ou seja, com tempos de resposta previsíveis, essenciais para controle de movimento sincronizado entre múltiplos robôs em uma linha de produção.</p>
+        </div>
+
+        <div class="protocolo-card">
+          <h3>🌐 OPC UA (Open Platform Communications Unified Architecture)</h3>
+          <p class="p2">Protocolo aberto e independente de fabricante, criado para permitir que equipamentos de diferentes marcas (CLPs, robôs, sensores, sistemas SCADA/MES) "conversem" entre si usando um modelo de dados padronizado. É considerado um dos pilares da Indústria 4.0 por permitir a integração vertical (do chão de fábrica até a nuvem) com segurança e semântica de dados estruturada.</p>
+        </div>
+
+        <div class="protocolo-card">
+          <h3>📡 MQTT (Message Queuing Telemetry Transport)</h3>
+          <p class="p2">Protocolo leve de mensagens, baseado no modelo publish/subscribe (publicação/assinatura), muito usado em projetos de IoT com Arduino, ESP32 e Raspberry Pi. Um dispositivo "publica" uma mensagem em um tópico (ex: <code>fabrica/setor1/temperatura</code>) e todos os dispositivos "inscritos" nesse tópico recebem a informação automaticamente através de um servidor intermediário chamado broker. É ideal para sensores com conectividade limitada, por consumir pouca largura de banda e energia.</p>
+        </div>
+      </section>
+
+      <section class="p0">
+        <p class="p1">Como Robôs e Sensores se Integram a esses Sistemas</p>
+        <br>
+        <p class="p2">Na prática, um robô industrial articulado moderno pode expor seus dados de posição, corrente dos motores e status operacional via um servidor OPC UA embutido em seu controlador. Um sensor MQ-135 conectado a um ESP32, por sua vez, publica a leitura de qualidade do ar em um tópico MQTT a cada poucos segundos.</p>
+        <br>
+        <p class="p2">Um <strong>gateway IoT industrial</strong> normalmente faz a "tradução" entre esses diferentes protocolos: ele coleta dados via Profinet ou Modbus do chão de fábrica e os republica via MQTT ou OPC UA para sistemas em nuvem, permitindo que um painel de controle (dashboard) exiba, em uma única tela, tanto os dados dos robôs quanto os dos sensores IoT de baixo custo.</p>
+        <br>
+        <div class="img">
+          <img src="./img/sensores.jpg" alt="Sensores e dispositivos conectados representando a integração de dados industriais">
+        </div>
+      </section>
+
+      <section class="p0">
+        <p class="p1">Exemplo simplificado: publicando dados de um sensor via MQTT (ESP32)</p>
+        <br>
+        <div class="codigo-box">#include &lt;WiFi.h&gt;
+#include &lt;PubSubClient.h&gt;
+
+const char* redeWifi = "NOME_DA_REDE";
+const char* senhaWifi = "SENHA_DA_REDE";
+const char* enderecoBroker = "broker.exemplo.com";
+
+WiFiClient espClient;
+PubSubClient cliente(espClient);
+
+void setup() {
+  Serial.begin(9600);
+  WiFi.begin(redeWifi, senhaWifi);   // Conecta o ESP32 à rede Wi-Fi
+  while (WiFi.status() != WL_CONNECTED) delay(500);
+
+  cliente.setServer(enderecoBroker, 1883); // Define o broker MQTT
+}
+
+void loop() {
+  if (!cliente.connected()) {
+    cliente.connect("sensor_temperatura_setor1"); // ID único do dispositivo
+  }
+
+  float temperatura = 26.4; // valor lido, por exemplo, de um DHT22
+
+  char payload[10];
+  dtostrf(temperatura, 4, 1, payload); // Converte float para texto
+
+  // Publica o valor no tópico do setor 1 da fábrica
+  cliente.publish("fabrica/setor1/temperatura", payload);
+
+  delay(5000); // Publica uma nova leitura a cada 5 segundos
+}</div>
+      </section>
+    </main>
+    <br>
+    <footer>
+      <p>By NexTheis &copy; &trade; </p>
+    </footer>
+</body>
+</html>

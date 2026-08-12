@@ -1,0 +1,17 @@
+<svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8ecfd"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="376" height="256" rx="16" fill="url(#g)" stroke="#d6d6d6" stroke-width="2"/>
+  
+<circle cx="200" cy="100" r="45" fill="none" stroke="#2b2b2b" stroke-width="4"/>
+<circle cx="200" cy="100" r="6" fill="#2b2b2b"/>
+<path d="M200 60 A 40 40 0 0 1 240 100" fill="none" stroke="#3f6fe0" stroke-width="5" marker-end="url(#arrow)"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3f6fe0"/></marker></defs>
+<rect x="180" y="140" width="40" height="10" fill="#e0a63f"/>
+
+  <text x="190.0" y="244" font-family="Gill Sans, Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#333333">Sensor Hall A3144</text>
+</svg>
