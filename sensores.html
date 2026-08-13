@@ -31,36 +31,9 @@
     <br><br>
     <main>
       <h1 class="titulo">Catálogo de Sensores IoT e Industriais</h1>
-      <p class="subtitulo">25 sensores usados em projetos com Arduino, ESP32, Raspberry Pi e CLPs, organizados por categoria</p>
+      <p class="subtitulo">Os 10 sensores mais utilizados em projetos com Arduino, ESP32, Raspberry Pi e CLPs, organizados por categoria</p>
 
       <div class="grid-catalogo">
-
-        <!-- DHT11 -->
-        <article class="card-sensor" data-nome="DHT11 Temperatura Umidade">
-          <div class="card-img"><img src="./img/sensores/dht11.svg" alt="Ícone do sensor DHT11 de temperatura e umidade"></div>
-          <div class="card-corpo">
-            <h2>DHT11</h2>
-            <span class="badge">Categoria: Temperatura e Umidade</span>
-            <span class="tag-sinal digital">Digital</span>
-            <h4>Conceito</h4>
-            <p>Sensor digital combinado de temperatura e umidade relativa do ar, de baixo custo, muito usado em projetos educacionais e estações meteorológicas simples.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Utiliza um termistor NTC para medir temperatura e um sensor capacitivo de umidade; um chip interno converte as leituras analógicas em um sinal digital de um único fio (protocolo proprietário de tempo).</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixa de temperatura</td><td>0°C a 50°C (±2°C)</td></tr>
-              <tr><td>Faixa de umidade</td><td>20% a 90% UR (±5%)</td></tr>
-              <tr><td>Alimentação</td><td>3V a 5V</td></tr>
-              <tr><td>Taxa de amostragem</td><td>1 leitura/segundo</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Monitoramento de ambientes internos, estufas simples, estações meteorológicas amadoras e controle básico de climatização.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Conectado a um Arduino, o DHT11 envia leituras a cada 2 segundos para acionar um ventilador via relé quando a temperatura ultrapassa 28°C.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Aosong Electronics (fabricante do chip original); módulos vendidos por diversas marcas (Keyestudio, Adafruit, SparkFun).</p>
-          </div>
-        </article>
 
         <!-- DHT22 -->
         <article class="card-sensor" data-nome="DHT22 Temperatura Umidade AM2302">
@@ -143,58 +116,6 @@
           </div>
         </article>
 
-        <!-- LDR -->
-        <article class="card-sensor" data-nome="LDR Luminosidade fotoresistor">
-          <div class="card-img"><img src="./img/sensores/ldr.svg" alt="Ícone do sensor de luminosidade LDR"></div>
-          <div class="card-corpo">
-            <h2>LDR (Fotoresistor)</h2>
-            <span class="badge">Categoria: Luminosidade</span>
-            <span class="tag-sinal analogico">Analógico</span>
-            <h4>Conceito</h4>
-            <p>LDR (Light Dependent Resistor) é um resistor cuja resistência elétrica varia de acordo com a quantidade de luz incidente sobre ele.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>É feito de um material semicondutor fotossensível (geralmente sulfeto de cádmio). Quanto mais luz incide sobre o componente, menor é sua resistência elétrica, o que altera a tensão lida em um divisor de tensão conectado a uma entrada analógica.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Resistência no escuro</td><td>~1 MΩ</td></tr>
-              <tr><td>Resistência sob luz forte</td><td>~1 kΩ ou menos</td></tr>
-              <tr><td>Tempo de resposta</td><td>Relativamente lento (dezenas de ms)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Controle automático de iluminação pública e residencial, sistemas de economia de energia, alarmes de presença por sombra.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Um LDR conectado ao Arduino aciona automaticamente um relé de iluminação quando a luminosidade ambiente cai abaixo de um limiar definido.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Componente genérico fabricado por diversas empresas de eletrônica (ex: Advanced Photonix, Excelitas Technologies).</p>
-          </div>
-        </article>
-
-        <!-- BH1750 -->
-        <article class="card-sensor" data-nome="BH1750 Luminosidade digital lux">
-          <div class="card-img"><img src="./img/sensores/bh1750.svg" alt="Ícone do sensor digital de luminosidade BH1750"></div>
-          <div class="card-corpo">
-            <h2>BH1750</h2>
-            <span class="badge">Categoria: Luminosidade</span>
-            <span class="tag-sinal i2c">I2C</span>
-            <h4>Conceito</h4>
-            <p>Sensor digital de luminosidade que mede a intensidade luminosa diretamente em lux, com muito mais precisão que um LDR simples.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Um fotodiodo converte a luz incidente em corrente elétrica, que é processada internamente por um conversor analógico-digital de 16 bits, entregando o valor já calculado em lux via barramento I2C.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixa de medição</td><td>1 a 65535 lux</td></tr>
-              <tr><td>Resolução</td><td>1 lux</td></tr>
-              <tr><td>Comunicação</td><td>I2C (endereço 0x23 ou 0x5C)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Sistemas de iluminação inteligente (smart lighting), controle de estufas, medição de qualidade de iluminação em ambientes de trabalho.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Conectado via I2C a um ESP32, o BH1750 ajusta automaticamente o brilho de uma tira de LED para manter a luminosidade constante em um ambiente.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>ROHM Semiconductor (fabricante japonês do chip original BH1750FVI).</p>
-          </div>
-        </article>
-
         <!-- HC-SR04 -->
         <article class="card-sensor" data-nome="HC-SR04 Distancia ultrassonico">
           <div class="card-img"><img src="./img/sensores/hcsr04.svg" alt="Ícone do sensor ultrassônico de distância HC-SR04"></div>
@@ -248,58 +169,6 @@
           </div>
         </article>
 
-        <!-- Indutivo -->
-        <article class="card-sensor" data-nome="Sensor Indutivo LJ12A3 Proximidade metal">
-          <div class="card-img"><img src="./img/sensores/indutivo.svg" alt="Ícone do sensor indutivo de proximidade LJ12A3"></div>
-          <div class="card-corpo">
-            <h2>Sensor Indutivo LJ12A3</h2>
-            <span class="badge">Categoria: Proximidade</span>
-            <span class="tag-sinal digital">Digital (NPN/PNP)</span>
-            <h4>Conceito</h4>
-            <p>Sensor de proximidade que detecta exclusivamente objetos metálicos, sem contato físico, muito utilizado em automação industrial.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Gera um campo eletromagnético de alta frequência na ponta do sensor. Quando um objeto metálico se aproxima, ele induz correntes parasitas (correntes de Foucault) que alteram esse campo, sendo essa variação detectada e convertida em um sinal de saída digital.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Distância de detecção</td><td>Tipicamente 2 mm a 4 mm</td></tr>
-              <tr><td>Alimentação</td><td>6V a 36V DC</td></tr>
-              <tr><td>Saída</td><td>NPN ou PNP (normalmente aberto/fechado)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Contagem de peças metálicas em linhas de produção, detecção de posição de fim de curso em robôs cilíndricos e cartesianos, controle de esteiras.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Instalado próximo a uma esteira, o sensor indutivo conta quantas peças metálicas passam por minuto, enviando o total para um CLP.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Modelo genérico difundido por fabricantes chineses; equivalentes industriais de referência: Omron (série E2E) e Autonics (série PR).</p>
-          </div>
-        </article>
-
-        <!-- Capacitivo -->
-        <article class="card-sensor" data-nome="Sensor Capacitivo LJ18A3 Proximidade solidos liquidos">
-          <div class="card-img"><img src="./img/sensores/capacitivo.svg" alt="Ícone do sensor capacitivo de proximidade LJ18A3"></div>
-          <div class="card-corpo">
-            <h2>Sensor Capacitivo LJ18A3</h2>
-            <span class="badge">Categoria: Proximidade</span>
-            <span class="tag-sinal digital">Digital (NPN/PNP)</span>
-            <h4>Conceito</h4>
-            <p>Sensor de proximidade capaz de detectar tanto materiais metálicos quanto não metálicos, como plástico, vidro, madeira, líquidos e grãos.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Funciona como um capacitor, gerando um campo eletrostático na ponta do sensor. A aproximação de qualquer material (mesmo não condutor) altera a capacitância desse campo, disparando o sinal de saída ao ultrapassar um limiar de sensibilidade ajustável.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Distância de detecção</td><td>Tipicamente até 15 mm (ajustável)</td></tr>
-              <tr><td>Alimentação</td><td>6V a 36V DC</td></tr>
-              <tr><td>Sensibilidade</td><td>Ajustável via potenciômetro</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Controle de nível em silos e reservatórios (sólidos e líquidos), detecção de embalagens plásticas em linhas de envase, contagem de caixas.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Fixado na lateral de um reservatório, o sensor capacitivo detecta quando o líquido atinge determinada altura, sinalizando ao CLP para interromper o bombeamento.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Modelo genérico difundido por fabricantes chineses; equivalentes industriais de referência: Schneider Electric (Telemecanique XT) e Omron (série E2K).</p>
-          </div>
-        </article>
-
         <!-- MQ-2 -->
         <article class="card-sensor" data-nome="MQ-2 Gas fumaca gases combustiveis">
           <div class="card-img"><img src="./img/sensores/mq2.svg" alt="Ícone do sensor de gás e fumaça MQ-2"></div>
@@ -323,32 +192,6 @@
             <p>Conectado a um Arduino, o MQ-2 aciona um buzzer e envia um alerta via rede quando a concentração de gás ultrapassa um limiar de segurança.</p>
             <h4>Fabricantes / Modelos</h4>
             <p>Henan Hanwei Electronics (Winsen Electronics), fabricante chinês responsável pela série de sensores MQ.</p>
-          </div>
-        </article>
-
-        <!-- MQ-135 -->
-        <article class="card-sensor" data-nome="MQ-135 Qualidade do ar gas">
-          <div class="card-img"><img src="./img/sensores/mq135.svg" alt="Ícone do sensor de qualidade do ar MQ-135"></div>
-          <div class="card-corpo">
-            <h2>MQ-135</h2>
-            <span class="badge">Categoria: Gás</span>
-            <span class="tag-sinal analogico">Analógico / Digital (com comparador)</span>
-            <h4>Conceito</h4>
-            <p>Sensor de gás voltado ao monitoramento da qualidade do ar, sensível a amônia, óxidos de nitrogênio, benzeno, fumaça e CO2.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Assim como o MQ-2, utiliza um elemento sensível de SnO2 cuja resistência varia conforme a concentração dos gases poluentes no ar, gerando uma tensão de saída analógica proporcional.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Gases detectados</td><td>NH3, NOx, benzeno, fumaça, CO2</td></tr>
-              <tr><td>Alimentação</td><td>5V</td></tr>
-              <tr><td>Aplicação típica</td><td>Monitoramento contínuo de qualidade do ar</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Estações de monitoramento de qualidade do ar urbano e industrial, sistemas de ventilação automática em ambientes fechados, agricultura de precisão (estufas).</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Um ESP32 com o MQ-135 publica periodicamente o índice de qualidade do ar em um tópico MQTT, alimentando um painel de monitoramento ambiental.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Henan Hanwei Electronics (Winsen Electronics).</p>
           </div>
         </article>
 
@@ -378,82 +221,6 @@
           </div>
         </article>
 
-        <!-- Chuva -->
-        <article class="card-sensor" data-nome="Sensor de Chuva FC-37">
-          <div class="card-img"><img src="./img/sensores/chuva.svg" alt="Ícone do sensor de chuva FC-37"></div>
-          <div class="card-corpo">
-            <h2>Sensor de Chuva FC-37</h2>
-            <span class="badge">Categoria: Chuva</span>
-            <span class="tag-sinal analogico">Analógico / Digital</span>
-            <h4>Conceito</h4>
-            <p>Sensor composto por uma placa com trilhas condutoras expostas que detecta a presença e a intensidade de chuva.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>As gotas de água formam um caminho condutor entre as trilhas da placa, reduzindo a resistência elétrica medida — quanto mais água, menor a resistência e maior o sinal analógico gerado pelo módulo comparador.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Saída</td><td>Analógica (intensidade) e digital (limiar ajustável)</td></tr>
-              <tr><td>Alimentação</td><td>5V</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Automação de coberturas retráteis, sistemas de irrigação inteligente (interrompe irrigação quando chove), estações meteorológicas.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Ao detectar chuva, o sensor aciona automaticamente o fechamento de uma cobertura motorizada conectada ao Arduino.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo genérico difundido por diversos fabricantes de eletrônica para prototipagem.</p>
-          </div>
-        </article>
-
-        <!-- Nivel -->
-        <article class="card-sensor" data-nome="Sensor de Nivel Boia reservatorio">
-          <div class="card-img"><img src="./img/sensores/nivel.svg" alt="Ícone do sensor de nível tipo boia"></div>
-          <div class="card-corpo">
-            <h2>Sensor de Nível (Boia)</h2>
-            <span class="badge">Categoria: Nível</span>
-            <span class="tag-sinal digital">Digital (chave magnética)</span>
-            <h4>Conceito</h4>
-            <p>Sensor mecânico que utiliza uma boia flutuante para detectar o nível de líquido em um reservatório, acionando um contato elétrico.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Um ímã dentro da boia se move junto com o nível do líquido; ao atingir a posição do sensor (geralmente um reed switch), o contato é fechado ou aberto, sinalizando o nível mínimo ou máximo.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Saída</td><td>Contato digital (aberto/fechado)</td></tr>
-              <tr><td>Aplicação</td><td>Detecção de nível mínimo/máximo</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Controle de bombas em caixas d'água e reservatórios industriais, sistemas de irrigação, tanques de processos químicos.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Ligado ao Arduino, o sensor de boia aciona automaticamente uma bomba quando o nível do reservatório está baixo, desligando-a ao atingir o nível cheio.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Modelo genérico industrial; fabricantes de referência: Gems Sensors e Madison Company.</p>
-          </div>
-        </article>
-
-        <!-- Fluxo -->
-        <article class="card-sensor" data-nome="YF-S201 Fluxo vazao de agua">
-          <div class="card-img"><img src="./img/sensores/fluxo.svg" alt="Ícone do sensor de fluxo de água YF-S201"></div>
-          <div class="card-corpo">
-            <h2>YF-S201</h2>
-            <span class="badge">Categoria: Fluxo</span>
-            <span class="tag-sinal digital">Digital (pulsos)</span>
-            <h4>Conceito</h4>
-            <p>Sensor de fluxo (vazão) de água, que mede a quantidade de água que passa por uma tubulação através da rotação de uma turbina interna.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>A água em movimento gira um rotor com um ímã acoplado; um sensor de efeito Hall conta os pulsos gerados a cada rotação. A frequência de pulsos é proporcional à vazão de água (fórmula aproximada: vazão em L/min = frequência / 7,5).</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixa de vazão</td><td>1 a 30 L/min</td></tr>
-              <tr><td>Alimentação</td><td>5V a 24V</td></tr>
-              <tr><td>Saída</td><td>Trem de pulsos digitais</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Medição de consumo de água em residências e indústrias, controle de dosagem em processos de mistura, monitoramento de vazamentos.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Instalado na tubulação principal, o YF-S201 permite calcular o consumo total de água em litros ao longo do dia, enviando os dados para um sistema de faturamento inteligente.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Sensor popularizado por diversos fabricantes chineses de componentes hidráulicos e eletrônicos (linha YF).</p>
-          </div>
-        </article>
-
         <!-- Corrente -->
         <article class="card-sensor" data-nome="ACS712 Corrente eletrica sensor Hall">
           <div class="card-img"><img src="./img/sensores/corrente.svg" alt="Ícone do sensor de corrente elétrica ACS712"></div>
@@ -477,57 +244,6 @@
             <p>No exemplo de código da página do Arduino, a tensão de saída do ACS712 é convertida em amperes a partir da sensibilidade do sensor (V/A).</p>
             <h4>Fabricantes / Modelos</h4>
             <p>Allegro MicroSystems (fabricante norte-americano do chip ACS712).</p>
-          </div>
-        </article>
-
-        <!-- Tensao -->
-        <article class="card-sensor" data-nome="ZMPT101B Tensao AC medicao">
-          <div class="card-img"><img src="./img/sensores/tensao.svg" alt="Ícone do sensor de tensão AC ZMPT101B"></div>
-          <div class="card-corpo">
-            <h2>ZMPT101B</h2>
-            <span class="badge">Categoria: Tensão</span>
-            <span class="tag-sinal analogico">Analógico</span>
-            <h4>Conceito</h4>
-            <p>Módulo baseado em transformador de precisão para medição de tensão elétrica alternada (CA), isolando galvanicamente o circuito de medição do circuito de potência.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Um transformador de tensão reduz proporcionalmente a tensão da rede elétrica para um nível seguro, que é então retificado e condicionado por um amplificador operacional, gerando um sinal analógico proporcional lido pelo microcontrolador.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Tensão de entrada</td><td>Até 250V AC</td></tr>
-              <tr><td>Isolamento</td><td>Galvânico, via transformador</td></tr>
-              <tr><td>Saída</td><td>Sinal analógico senoidal (amostragem via ADC)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Medidores de energia inteligentes (smart meters), monitoramento de qualidade de energia elétrica, detecção de quedas e picos de tensão.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Combinado ao ACS712, o ZMPT101B permite calcular a potência elétrica real (P = V x I) consumida por um equipamento industrial.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo genérico baseado em transformadores de precisão fabricados por diversas empresas de componentes eletrônicos.</p>
-          </div>
-        </article>
-
-        <!-- Vibracao -->
-        <article class="card-sensor" data-nome="SW-420 Vibracao">
-          <div class="card-img"><img src="./img/sensores/vibracao.svg" alt="Ícone do sensor de vibração SW-420"></div>
-          <div class="card-corpo">
-            <h2>SW-420</h2>
-            <span class="badge">Categoria: Vibração</span>
-            <span class="tag-sinal digital">Digital</span>
-            <h4>Conceito</h4>
-            <p>Sensor de vibração de baixo custo, que detecta a ocorrência de vibrações ou impactos mecânicos.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Utiliza uma esfera metálica dentro de um tubo condutor; quando ocorre vibração, a esfera se move e interrompe momentaneamente o contato elétrico interno, gerando um pulso digital detectado pelo microcontrolador.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Saída</td><td>Digital (nível alto/baixo)</td></tr>
-              <tr><td>Sensibilidade</td><td>Ajustável via potenciômetro on-board</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Manutenção preditiva de motores e máquinas rotativas (detecção de vibração anormal), alarmes antifurto, monitoramento estrutural básico.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Fixado próximo a um motor industrial, o SW-420 aciona um alerta quando o nível de vibração ultrapassa o esperado, indicando possível desalinhamento ou desgaste de rolamentos.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo genérico difundido por diversos fabricantes de eletrônica para prototipagem.</p>
           </div>
         </article>
 
@@ -579,107 +295,6 @@
             <p>Um leitor MFRC522 conectado a um Arduino libera o acesso a uma sala apenas quando reconhece o identificador de um cartão previamente cadastrado.</p>
             <h4>Fabricantes / Modelos</h4>
             <p>NXP Semiconductors (fabricante original do chip MFRC522).</p>
-          </div>
-        </article>
-
-        <!-- Peso -->
-        <article class="card-sensor" data-nome="Celula de Carga HX711 Peso balanca">
-          <div class="card-img"><img src="./img/sensores/peso.svg" alt="Ícone da célula de carga com módulo HX711"></div>
-          <div class="card-corpo">
-            <h2>Célula de Carga + HX711</h2>
-            <span class="badge">Categoria: Peso</span>
-            <span class="tag-sinal digital">Digital (via HX711)</span>
-            <h4>Conceito</h4>
-            <p>Conjunto formado por uma célula de carga (sensor mecânico de deformação) e um módulo amplificador/conversor HX711, usado para medir peso e força.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>A célula de carga contém extensômetros (strain gauges) que alteram sua resistência elétrica ao se deformarem sob peso, formando uma ponte de Wheatstone. O módulo HX711 amplifica esse sinal, que é extremamente pequeno, e o converte em um valor digital de 24 bits.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Resolução do ADC (HX711)</td><td>24 bits</td></tr>
-              <tr><td>Capacidade da célula</td><td>Varia conforme o modelo (de 1 kg a mais de 100 kg)</td></tr>
-              <tr><td>Comunicação</td><td>Digital serial (2 fios: clock e dados)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Balanças industriais e comerciais, controle de nível de silos por peso, sistemas de dosagem e envase por peso.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Uma balança conectada a um Arduino via HX711 registra o peso de caixas em uma linha de embalagem, rejeitando automaticamente unidades fora da faixa esperada.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Avia Semiconductor (fabricante do chip HX711); células de carga fabricadas por diversas empresas (ex: Zemic, Tal Technologies).</p>
-          </div>
-        </article>
-
-        <!-- Som -->
-        <article class="card-sensor" data-nome="KY-037 Som nivel de ruido microfone">
-          <div class="card-img"><img src="./img/sensores/som.svg" alt="Ícone do sensor de som KY-037"></div>
-          <div class="card-corpo">
-            <h2>KY-037</h2>
-            <span class="badge">Categoria: Som</span>
-            <span class="tag-sinal analogico">Analógico / Digital</span>
-            <h4>Conceito</h4>
-            <p>Módulo sensor de som de alta sensibilidade, usado para detectar a presença e a intensidade de ruídos no ambiente.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Um microfone de eletreto capta as ondas sonoras e as converte em um sinal elétrico, que é amplificado por um circuito comparador on-board, gerando tanto uma saída analógica proporcional à intensidade quanto uma saída digital que dispara ao ultrapassar um limiar ajustável.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Alimentação</td><td>5V</td></tr>
-              <tr><td>Sensibilidade</td><td>Ajustável via potenciômetro</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Monitoramento de ruído em ambientes industriais (segurança do trabalho), sistemas de alarme sonoro, controle de acesso por palmas ou comandos de voz simples.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Instalado em um chão de fábrica, o KY-037 registra picos de ruído que podem indicar falhas mecânicas em máquinas, alertando a equipe de manutenção.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo genérico da popular linha de sensores "KY" para kits de prototipagem eletrônica.</p>
-          </div>
-        </article>
-
-        <!-- Chama -->
-        <article class="card-sensor" data-nome="Sensor de Chama Infravermelho deteccao de fogo">
-          <div class="card-img"><img src="./img/sensores/chama.svg" alt="Ícone do sensor de chama infravermelho"></div>
-          <div class="card-corpo">
-            <h2>Sensor de Chama (IR)</h2>
-            <span class="badge">Categoria: Chama</span>
-            <span class="tag-sinal digital">Digital / Analógico</span>
-            <h4>Conceito</h4>
-            <p>Sensor infravermelho capaz de detectar a radiação característica emitida por chamas de fogo, permitindo identificação precoce de incêndios.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Um fotodiodo ou fototransistor sensível à faixa infravermelha específica emitida por chamas (aproximadamente 760 nm a 1100 nm) detecta essa radiação; o circuito comparador on-board gera um sinal digital quando a intensidade ultrapassa o limiar configurado.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Ângulo de detecção</td><td>~60°</td></tr>
-              <tr><td>Alcance</td><td>Até ~1 metro (varia conforme o tamanho da chama)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Sistemas de detecção e alarme de incêndio, monitoramento de fornos e caldeiras industriais, robótica de combate a incêndio (robôs apaga-fogo educacionais).</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Conectado a um Arduino, o sensor aciona imediatamente um alarme sonoro e envia uma notificação de emergência ao detectar uma chama próxima.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo genérico difundido por diversos fabricantes de eletrônica para prototipagem (frequentemente na linha "KY" ou similares).</p>
-          </div>
-        </article>
-
-        <!-- Encoder -->
-        <article class="card-sensor" data-nome="Encoder Incremental KY-040 posicao rotacao">
-          <div class="card-img"><img src="./img/sensores/encoder.svg" alt="Ícone do encoder incremental rotativo KY-040"></div>
-          <div class="card-corpo">
-            <h2>Encoder Incremental KY-040</h2>
-            <span class="badge">Categoria: Encoder</span>
-            <span class="tag-sinal digital">Digital (2 canais em quadratura)</span>
-            <h4>Conceito</h4>
-            <p>Encoder rotativo incremental usado para medir a posição angular e o sentido de rotação de um eixo, muito comum em interfaces de controle e em juntas de robôs de baixo custo.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Um disco com trilhas condutoras gira junto ao eixo, gerando dois sinais digitais defasados em quadratura (canais A e B). A ordem em que esses pulsos ocorrem indica o sentido de rotação, e a contagem de pulsos indica a posição/deslocamento angular.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Saída</td><td>2 canais digitais em quadratura (A e B) + botão push (integrado)</td></tr>
-              <tr><td>Alimentação</td><td>5V</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Realimentação de posição em juntas de robôs cartesianos e articulados de baixo custo, controles de interface de máquinas (ajuste de parâmetros), medição de deslocamento em esteiras.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Utilizado como controle manual em uma interface de máquina, o encoder KY-040 permite ao operador ajustar um parâmetro (como velocidade de um motor) girando o eixo em qualquer direção.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo genérico da linha "KY" para prototipagem; encoders industriais de referência de maior precisão: Bourns e Omron.</p>
           </div>
         </article>
 
