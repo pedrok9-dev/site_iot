@@ -237,6 +237,11 @@ button {
     color: white;
 }
 
+/* ======================================================
+   Estilos adicionados para o catálogo de Robôs Industriais
+   e Sensores IoT/Industriais (Unidade Curricular: IoT)
+   ====================================================== */
+
 .subtitulo {
     text-align: center;
     font-size: 1.1rem;
@@ -496,4 +501,95 @@ button {
     .p0 { padding: 25px 20px; margin: 40px 12px; }
     .grid-catalogo { grid-template-columns: 1fr; }
     .titulo { font-size: 2.1rem; }
+}
+
+/* ======================================================
+   Estilos para a página de Desafios (Tinkercad)
+   ====================================================== */
+
+.desafio-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px 34px 36px 34px;
+    font-family: 'Gill Sans';
+}
+
+.desafio-card h2 {
+    font-size: 1.7rem;
+    color: #272727;
+    border-left: 5px solid #3f6fe0;
+    padding-left: 12px;
+    margin-bottom: 6px;
+}
+
+.desafio-card h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    border-left: 4px solid #333;
+    padding-left: 8px;
+}
+
+.desafio-card p {
+    font-size: 1rem;
+    color: #3a3a3a;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.desafio-img {
+    background: #f4f6f8;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    margin: 10px 0 6px 0;
+}
+
+.desafio-img img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: repeating-linear-gradient(
+        45deg,
+        #eef2f7,
+        #eef2f7 12px,
+        #e4e9ef 12px,
+        #e4e9ef 24px
+    );
+    border: 3px dashed #999;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #555;
+    margin: 10px 0 6px 0;
+    padding: 20px;
+}
+
+.video-placeholder .icone-video {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.video-placeholder p {
+    text-align: center;
+    color: #555;
+    max-width: 440px;
+}
+
+.video-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
 }
