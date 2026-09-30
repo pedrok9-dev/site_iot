@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./java.js" defer></script>
+    <script src="./quiz.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
+    <title>Quiz - Robótica Industrial, Sensores e IoT</title>
+</head>
+<body>
+    <header>
+    <div class="off-screen-menu">
+      <ul>
+        <li><a href="./index.html">Início</a></li>
+        <li><a href="./robos.html">Robôs Industriais</a></li>
+        <li><a href="./sensores.html">Sensores IoT</a></li>
+        <li><a href="./arduino.html">Arduino</a></li>
+        <li><a href="./comunicacao.html">Comunicação Industrial</a></li>
+        <li><a href="./tinkercad.html">Desafios Tinkercad</a></li>
+        <li><a href="./esp8266.html">ESP8266 / NodeMCU</a></li>
+        <li><a href="./quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+    <nav>
+      <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h1 class="marca">NexTheis IoT</h1>
+    </nav>
+    </header>
+    <br><br>
+    <main>
+      <h1 class="titulo">Quiz — Robótica, Sensores e IoT</h1>
+      <p class="subtitulo">Teste seus conhecimentos com 10 questões no estilo SAEP/ENEM sobre o conteúdo deste site</p>
+
+      <!-- ===================== TELA INICIAL ===================== -->
+      <section id="tela-intro" class="quiz-tela">
+        <div class="quiz-intro-card">
+          <div class="quiz-intro-icone">🧠</div>
+          <h2>Pronto para testar seus conhecimentos?</h2>
+          <p>O quiz tem <strong>10 questões</strong> contextualizadas, no formato SAEP/ENEM (situação-problema + pergunta + 4 alternativas), cobrindo:</p>
+          <ul class="quiz-lista-temas">
+            <li>🤖 Robótica Industrial</li>
+            <li>📡 Sensores IoT <span>(2 questões)</span></li>
+            <li>🔋 Multímetro</li>
+            <li>💻 Arduino <span>(2 questões)</span></li>
+            <li>📶 ESP8266 / NodeMCU</li>
+            <li>⌨️ Interpretação de Código <span>(3 questões)</span></li>
+          </ul>
+          <p>Ao final, você verá quantas questões acertou e errou, além de entrar no ranking local deste navegador.</p>
+
+          <label for="input-nome-jogador" class="quiz-label-nome">Digite seu nome para entrar no ranking:</label>
+          <input type="text" id="input-nome-jogador" class="quiz-input-nome" placeholder="Seu nome" maxlength="20">
+
+          <div class="quiz-intro-botoes">
+            <button id="btn-jogar" class="btn-jogar">▶ Jogar</button>
+            <button id="btn-ver-ranking-intro" class="btn-voltar">🏆 Ver Ranking</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TELA DO QUIZ ===================== -->
+      <section id="tela-quiz" class="quiz-tela escondido">
+        <div class="quiz-container">
+
+          <div class="quiz-progresso">
+            <span id="quiz-progresso-texto">Questão 1 de 10</span>
+            <div class="quiz-progresso-trilha">
+              <div id="quiz-progresso-barra" class="quiz-progresso-barra"></div>
+            </div>
+          </div>
+
+          <span id="quiz-area-badge" class="badge quiz-area-badge">Área</span>
+
+          <p id="quiz-contexto" class="quiz-contexto"></p>
+          <p id="quiz-pergunta" class="quiz-pergunta"></p>
+
+          <div id="quiz-imagem-container" class="quiz-imagem-container escondido"></div>
+
+          <div id="quiz-alternativas" class="quiz-alternativas"></div>
+
+          <p id="quiz-feedback" class="quiz-feedback"></p>
+
+          <button id="quiz-proxima-btn" class="btn-proxima escondido">Próxima questão →</button>
+        </div>
+      </section>
+
+      <!-- ===================== TELA DE RESULTADO ===================== -->
+      <section id="tela-resultado" class="quiz-tela escondido">
+        <div class="quiz-resultado-card">
+          <div class="quiz-intro-icone">🏁</div>
+          <h2>Quiz finalizado!</h2>
+
+          <div class="quiz-resultado-numeros">
+            <div class="resultado-bloco resultado-acertos">
+              <span id="resultado-acertos">0</span>
+              <p>Acertos</p>
+            </div>
+            <div class="resultado-bloco resultado-erros">
+              <span id="resultado-erros">0</span>
+              <p>Erros</p>
+            </div>
+            <div class="resultado-bloco resultado-percentual-bloco">
+              <span id="resultado-percentual">0%</span>
+              <p>Aproveitamento</p>
+            </div>
+            <div class="resultado-bloco resultado-pontos-bloco">
+              <span id="resultado-pontos">0</span>
+              <p>Pontos</p>
+            </div>
+          </div>
+
+          <p id="resultado-mensagem" class="resultado-mensagem"></p>
+          <p id="resultado-posicao" class="resultado-posicao"></p>
+
+          <div class="quiz-resultado-botoes">
+            <button id="btn-jogar-novamente" class="btn-jogar">🔁 Jogar novamente</button>
+            <button id="btn-ver-ranking-resultado" class="btn-voltar">🏆 Ver Ranking</button>
+            <button id="btn-voltar-inicio" class="btn-voltar">Voltar ao início do quiz</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TELA DE RANKING ===================== -->
+      <section id="tela-ranking" class="quiz-tela escondido">
+        <div class="quiz-ranking-card">
+          <div class="quiz-intro-icone">🏆</div>
+          <h2>Ranking — Melhores Pontuações</h2>
+          <p class="quiz-ranking-aviso">Ranking salvo apenas neste navegador/dispositivo (armazenamento local, sem servidor).</p>
+
+          <div id="ranking-lista" class="ranking-lista">
+            <!-- Preenchido via JavaScript -->
+          </div>
+
+          <p id="ranking-vazio" class="ranking-vazio escondido">Ninguém jogou ainda neste navegador. Seja o primeiro a entrar no ranking!</p>
+
+          <div class="quiz-resultado-botoes">
+            <button id="btn-ranking-voltar" class="btn-jogar">▶ Jogar / Voltar</button>
+            <button id="btn-limpar-ranking" class="btn-limpar-ranking">Limpar ranking deste navegador</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <br>
+    <footer>
+      <p>By NexTheis &copy; &trade; </p>
+    </footer>
+</body>
+</html>
