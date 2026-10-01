@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./java.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
-    <title>Catálogo de Sensores IoT e Industriais</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./java.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
+  <title>Catálogo de Sensores IoT e Industriais</title>
 </head>
+
 <body>
-    <header>
+  <header>
     <div class="off-screen-menu">
       <ul>
         <li><a href="./index.html">Início</a></li>
@@ -30,283 +32,458 @@
       </div>
       <h1 class="marca">NexTheis IoT</h1>
     </nav>
-    </header>
-    <br><br>
-    <main>
-      <h1 class="titulo">Catálogo de Sensores IoT e Industriais</h1>
-      <p class="subtitulo">Os 10 sensores mais utilizados em projetos com Arduino, ESP32, Raspberry Pi e CLPs, organizados por categoria</p>
+  </header>
+  <br><br>
+  <main>
+    <h1 class="titulo">Catálogo de Sensores IoT e Industriais</h1>
+    <p class="subtitulo">Os 10 sensores mais utilizados em projetos com Arduino, ESP32, Raspberry Pi e CLPs, organizados
+      por categoria</p>
 
-      <div class="grid-catalogo">
+    <div class="grid-catalogo">
 
-        <!-- DHT22 -->
-        <article class="card-sensor" data-nome="DHT22 Temperatura Umidade AM2302">
-          <div class="card-img"><img src="./img/sensores/dht22.svg" alt="Ícone do sensor DHT22 de temperatura e umidade de maior precisão"></div>
-          <div class="card-corpo">
-            <h2>DHT22</h2>
-            <span class="badge">Categoria: Temperatura e Umidade</span>
-            <span class="tag-sinal digital">Digital</span>
-            <h4>Conceito</h4>
-            <p>Versão aprimorada do DHT11, com maior precisão e faixa de medição mais ampla, também conhecido pelo nome de chip AM2302.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Mesmo princípio do DHT11 (termistor + sensor capacitivo de umidade + conversão digital em um fio), porém com componentes de maior qualidade, resultando em leituras mais estáveis e precisas.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixa de temperatura</td><td>-40°C a 80°C (±0,5°C)</td></tr>
-              <tr><td>Faixa de umidade</td><td>0% a 100% UR (±2-5%)</td></tr>
-              <tr><td>Alimentação</td><td>3V a 6V</td></tr>
-              <tr><td>Taxa de amostragem</td><td>1 leitura a cada 2 segundos</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Estufas agrícolas, câmaras frias, sistemas HVAC, monitoramento ambiental em estações IoT profissionais.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Em uma estufa conectada via ESP32, o DHT22 monitora temperatura e umidade e envia os dados via Wi-Fi/MQTT para um painel de controle em nuvem.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Aosong Electronics (chip AM2302); módulos comercializados por Adafruit, DFRobot e diversas marcas de eletrônica embarcada.</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="DHT22 Temperatura Umidade AM2302">
+        <div class="card-img"><img src="./img/sensores/dht22.svg"
+            alt="Ícone do sensor DHT22 de temperatura e umidade de maior precisão"></div>
+        <div class="card-corpo">
+          <h2>DHT22</h2>
+          <span class="badge">Categoria: Temperatura e Umidade</span>
+          <span class="tag-sinal digital">Digital</span>
+          <h4>Conceito</h4>
+          <p>Versão aprimorada do DHT11, com maior precisão e faixa de medição mais ampla, também conhecido pelo nome de
+            chip AM2302.</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>Mesmo princípio do DHT11 (termistor + sensor capacitivo de umidade + conversão digital em um fio), porém
+            com componentes de maior qualidade, resultando em leituras mais estáveis e precisas.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Faixa de temperatura</td>
+              <td>-40°C a 80°C (±0,5°C)</td>
+            </tr>
+            <tr>
+              <td>Faixa de umidade</td>
+              <td>0% a 100% UR (±2-5%)</td>
+            </tr>
+            <tr>
+              <td>Alimentação</td>
+              <td>3V a 6V</td>
+            </tr>
+            <tr>
+              <td>Taxa de amostragem</td>
+              <td>1 leitura a cada 2 segundos</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Estufas agrícolas, câmaras frias, sistemas HVAC, monitoramento ambiental em estações IoT profissionais.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Em uma estufa conectada via ESP32, o DHT22 monitora temperatura e umidade e envia os dados via Wi-Fi/MQTT
+            para um painel de controle em nuvem.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Aosong Electronics (chip AM2302); módulos comercializados por Adafruit, DFRobot e diversas marcas de
+            eletrônica embarcada.</p>
+        </div>
+      </article>
 
-        <!-- LM35 -->
-        <article class="card-sensor" data-nome="LM35 Temperatura Analogico">
-          <div class="card-img"><img src="./img/sensores/lm35.svg" alt="Ícone do sensor de temperatura analógico LM35"></div>
-          <div class="card-corpo">
-            <h2>LM35</h2>
-            <span class="badge">Categoria: Temperatura</span>
-            <span class="tag-sinal analogico">Analógico</span>
-            <h4>Conceito</h4>
-            <p>Sensor de temperatura analógico de precisão, cuja tensão de saída é diretamente proporcional à temperatura em graus Celsius.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>É um circuito integrado analógico que gera uma tensão de saída linear de 10 mV para cada grau Celsius, sem necessidade de calibração externa. O microcontrolador lê essa tensão por meio de um conversor analógico-digital (ADC).</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixa de medição</td><td>-55°C a 150°C</td></tr>
-              <tr><td>Sensibilidade</td><td>10 mV/°C</td></tr>
-              <tr><td>Alimentação</td><td>4V a 30V</td></tr>
-              <tr><td>Precisão</td><td>±0,5°C (a 25°C)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Controle de temperatura em processos industriais simples, monitoramento térmico de motores e painéis elétricos.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Ligado a uma entrada analógica do Arduino, o LM35 permite calcular a temperatura em °C multiplicando a tensão lida por 100 (veja o exemplo de código na página do Arduino).</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Texas Instruments (fabricante original do CI LM35, anteriormente National Semiconductor).</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="LM35 Temperatura Analogico">
+        <div class="card-img"><img src="./img/sensores/lm35.svg" alt="Ícone do sensor de temperatura analógico LM35">
+        </div>
+        <div class="card-corpo">
+          <h2>LM35</h2>
+          <span class="badge">Categoria: Temperatura</span>
+          <span class="tag-sinal analogico">Analógico</span>
+          <h4>Conceito</h4>
+          <p>Sensor de temperatura analógico de precisão, cuja tensão de saída é diretamente proporcional à temperatura
+            em graus Celsius.</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>É um circuito integrado analógico que gera uma tensão de saída linear de 10 mV para cada grau Celsius, sem
+            necessidade de calibração externa. O microcontrolador lê essa tensão por meio de um conversor
+            analógico-digital (ADC).</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Faixa de medição</td>
+              <td>-55°C a 150°C</td>
+            </tr>
+            <tr>
+              <td>Sensibilidade</td>
+              <td>10 mV/°C</td>
+            </tr>
+            <tr>
+              <td>Alimentação</td>
+              <td>4V a 30V</td>
+            </tr>
+            <tr>
+              <td>Precisão</td>
+              <td>±0,5°C (a 25°C)</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Controle de temperatura em processos industriais simples, monitoramento térmico de motores e painéis
+            elétricos.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Ligado a uma entrada analógica do Arduino, o LM35 permite calcular a temperatura em °C multiplicando a
+            tensão lida por 100 (veja o exemplo de código na página do Arduino).</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Texas Instruments (fabricante original do CI LM35, anteriormente National Semiconductor).</p>
+        </div>
+      </article>
 
-        <!-- DS18B20 -->
-        <article class="card-sensor" data-nome="DS18B20 Temperatura digital a prova dagua">
-          <div class="card-img"><img src="./img/sensores/ds18b20.svg" alt="Ícone do sensor de temperatura digital à prova d'água DS18B20"></div>
-          <div class="card-corpo">
-            <h2>DS18B20</h2>
-            <span class="badge">Categoria: Temperatura</span>
-            <span class="tag-sinal digital">Digital (1-Wire)</span>
-            <h4>Conceito</h4>
-            <p>Sensor digital de temperatura à prova d'água, muito usado para medir a temperatura de líquidos, solo e ambientes externos.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Usa o protocolo digital 1-Wire, permitindo conectar vários sensores DS18B20 no mesmo fio de dados, cada um identificado por um endereço único de 64 bits gravado de fábrica.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixa de medição</td><td>-55°C a 125°C</td></tr>
-              <tr><td>Precisão</td><td>±0,5°C (-10°C a 85°C)</td></tr>
-              <tr><td>Comunicação</td><td>1-Wire (endereçável, múltiplos sensores no mesmo barramento)</td></tr>
-              <tr><td>Encapsulamento</td><td>Cápsula metálica à prova d'água (versão waterproof)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Monitoramento de temperatura de líquidos em tanques, aquários, sistemas de irrigação e solo em agricultura de precisão.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Vários sensores DS18B20 distribuídos em diferentes pontos de um tanque industrial, todos lidos pelo mesmo pino digital do Arduino via protocolo 1-Wire.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Maxim Integrated (atualmente parte da Analog Devices), fabricante original do chip DS18B20.</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="DS18B20 Temperatura digital a prova dagua">
+        <div class="card-img"><img src="./img/sensores/ds18b20.svg"
+            alt="Ícone do sensor de temperatura digital à prova d'água DS18B20"></div>
+        <div class="card-corpo">
+          <h2>DS18B20</h2>
+          <span class="badge">Categoria: Temperatura</span>
+          <span class="tag-sinal digital">Digital (1-Wire)</span>
+          <h4>Conceito</h4>
+          <p>Sensor digital de temperatura à prova d'água, muito usado para medir a temperatura de líquidos, solo e
+            ambientes externos.</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>Usa o protocolo digital 1-Wire, permitindo conectar vários sensores DS18B20 no mesmo fio de dados, cada um
+            identificado por um endereço único de 64 bits gravado de fábrica.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Faixa de medição</td>
+              <td>-55°C a 125°C</td>
+            </tr>
+            <tr>
+              <td>Precisão</td>
+              <td>±0,5°C (-10°C a 85°C)</td>
+            </tr>
+            <tr>
+              <td>Comunicação</td>
+              <td>1-Wire (endereçável, múltiplos sensores no mesmo barramento)</td>
+            </tr>
+            <tr>
+              <td>Encapsulamento</td>
+              <td>Cápsula metálica à prova d'água (versão waterproof)</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Monitoramento de temperatura de líquidos em tanques, aquários, sistemas de irrigação e solo em agricultura
+            de precisão.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Vários sensores DS18B20 distribuídos em diferentes pontos de um tanque industrial, todos lidos pelo mesmo
+            pino digital do Arduino via protocolo 1-Wire.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Maxim Integrated (atualmente parte da Analog Devices), fabricante original do chip DS18B20.</p>
+        </div>
+      </article>
 
-        <!-- HC-SR04 -->
-        <article class="card-sensor" data-nome="HC-SR04 Distancia ultrassonico">
-          <div class="card-img"><img src="./img/sensores/hcsr04.svg" alt="Ícone do sensor ultrassônico de distância HC-SR04"></div>
-          <div class="card-corpo">
-            <h2>HC-SR04</h2>
-            <span class="badge">Categoria: Distância</span>
-            <span class="tag-sinal digital">Digital (Trigger/Echo)</span>
-            <h4>Conceito</h4>
-            <p>Sensor ultrassônico que mede distância através do tempo que um pulso sonoro leva para ir até um obstáculo e retornar (eco).</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>O pino Trigger emite um pulso ultrassônico de 40 kHz; o pino Echo fica em nível alto durante o tempo entre o envio e o recebimento do eco. A distância é calculada multiplicando esse tempo pela velocidade do som e dividindo por dois (ida e volta).</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixa de medição</td><td>2 cm a 400 cm</td></tr>
-              <tr><td>Precisão</td><td>~3 mm</td></tr>
-              <tr><td>Ângulo de detecção</td><td>~15°</td></tr>
-              <tr><td>Alimentação</td><td>5V</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Detecção de obstáculos em robótica móvel, medição de nível em reservatórios, sistemas de estacionamento automatizado, contagem de peças em esteiras.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>No exemplo de código da página do Arduino, o tempo de eco (em microssegundos) medido pelo HC-SR04 é convertido em centímetros usando a fórmula da velocidade do som.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo popularizado por diversos fabricantes chineses de eletrônica embarcada (ex: Elecfreaks, Keyestudio, HiLetgo).</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="HC-SR04 Distancia ultrassonico">
+        <div class="card-img"><img src="./img/sensores/hcsr04.svg"
+            alt="Ícone do sensor ultrassônico de distância HC-SR04"></div>
+        <div class="card-corpo">
+          <h2>HC-SR04</h2>
+          <span class="badge">Categoria: Distância</span>
+          <span class="tag-sinal digital">Digital (Trigger/Echo)</span>
+          <h4>Conceito</h4>
+          <p>Sensor ultrassônico que mede distância através do tempo que um pulso sonoro leva para ir até um obstáculo e
+            retornar (eco).</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>O pino Trigger emite um pulso ultrassônico de 40 kHz; o pino Echo fica em nível alto durante o tempo entre
+            o envio e o recebimento do eco. A distância é calculada multiplicando esse tempo pela velocidade do som e
+            dividindo por dois (ida e volta).</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Faixa de medição</td>
+              <td>2 cm a 400 cm</td>
+            </tr>
+            <tr>
+              <td>Precisão</td>
+              <td>~3 mm</td>
+            </tr>
+            <tr>
+              <td>Ângulo de detecção</td>
+              <td>~15°</td>
+            </tr>
+            <tr>
+              <td>Alimentação</td>
+              <td>5V</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Detecção de obstáculos em robótica móvel, medição de nível em reservatórios, sistemas de estacionamento
+            automatizado, contagem de peças em esteiras.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>No exemplo de código da página do Arduino, o tempo de eco (em microssegundos) medido pelo HC-SR04 é
+            convertido em centímetros usando a fórmula da velocidade do som.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Módulo popularizado por diversos fabricantes chineses de eletrônica embarcada (ex: Elecfreaks, Keyestudio,
+            HiLetgo).</p>
+        </div>
+      </article>
 
-        <!-- PIR -->
-        <article class="card-sensor" data-nome="PIR HC-SR501 Movimento presenca infravermelho">
-          <div class="card-img"><img src="./img/sensores/pir.svg" alt="Ícone do sensor de movimento PIR HC-SR501"></div>
-          <div class="card-corpo">
-            <h2>PIR HC-SR501</h2>
-            <span class="badge">Categoria: Movimento</span>
-            <span class="tag-sinal digital">Digital</span>
-            <h4>Conceito</h4>
-            <p>Sensor passivo infravermelho (PIR) capaz de detectar a presença de pessoas ou animais através da radiação de calor corporal emitida.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Uma lente Fresnel concentra a radiação infravermelha emitida por corpos quentes sobre um sensor piroelétrico; quando há variação súbita nessa radiação (movimento de um corpo quente na área), o sensor gera um sinal digital de saída em nível alto.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Alcance de detecção</td><td>Até 7 metros (ajustável)</td></tr>
-              <tr><td>Ângulo de detecção</td><td>~110°</td></tr>
-              <tr><td>Tempo de retardo</td><td>Ajustável (potenciômetro on-board)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Iluminação automática por presença, sistemas de alarme e segurança, contagem de pessoas em ambientes industriais.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Um PIR acoplado a um ESP32 envia uma notificação MQTT sempre que detecta movimento em uma área restrita da fábrica fora do horário de expediente.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Módulo padrão baseado no chip BISS0001, fabricado por diversas marcas de eletrônica (ex: Keyestudio, Elegoo).</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="PIR HC-SR501 Movimento presenca infravermelho">
+        <div class="card-img"><img src="./img/sensores/pir.svg" alt="Ícone do sensor de movimento PIR HC-SR501"></div>
+        <div class="card-corpo">
+          <h2>PIR HC-SR501</h2>
+          <span class="badge">Categoria: Movimento</span>
+          <span class="tag-sinal digital">Digital</span>
+          <h4>Conceito</h4>
+          <p>Sensor passivo infravermelho (PIR) capaz de detectar a presença de pessoas ou animais através da radiação
+            de calor corporal emitida.</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>Uma lente Fresnel concentra a radiação infravermelha emitida por corpos quentes sobre um sensor
+            piroelétrico; quando há variação súbita nessa radiação (movimento de um corpo quente na área), o sensor gera
+            um sinal digital de saída em nível alto.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Alcance de detecção</td>
+              <td>Até 7 metros (ajustável)</td>
+            </tr>
+            <tr>
+              <td>Ângulo de detecção</td>
+              <td>~110°</td>
+            </tr>
+            <tr>
+              <td>Tempo de retardo</td>
+              <td>Ajustável (potenciômetro on-board)</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Iluminação automática por presença, sistemas de alarme e segurança, contagem de pessoas em ambientes
+            industriais.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Um PIR acoplado a um ESP32 envia uma notificação MQTT sempre que detecta movimento em uma área restrita da
+            fábrica fora do horário de expediente.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Módulo padrão baseado no chip BISS0001, fabricado por diversas marcas de eletrônica (ex: Keyestudio,
+            Elegoo).</p>
+        </div>
+      </article>
 
-        <!-- MQ-2 -->
-        <article class="card-sensor" data-nome="MQ-2 Gas fumaca gases combustiveis">
-          <div class="card-img"><img src="./img/sensores/mq2.svg" alt="Ícone do sensor de gás e fumaça MQ-2"></div>
-          <div class="card-corpo">
-            <h2>MQ-2</h2>
-            <span class="badge">Categoria: Gás</span>
-            <span class="tag-sinal analogico">Analógico / Digital (com comparador)</span>
-            <h4>Conceito</h4>
-            <p>Sensor de gás semicondutor sensível a fumaça e a gases combustíveis como GLP, propano, metano e hidrogênio.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Possui um elemento sensível de dióxido de estanho (SnO2) que altera sua condutividade elétrica na presença dos gases-alvo. Um filamento aquecedor interno mantém a temperatura de operação ideal para a reação química de detecção.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Gases detectados</td><td>GLP, propano, metano, álcool, fumaça, hidrogênio</td></tr>
-              <tr><td>Alimentação</td><td>5V</td></tr>
-              <tr><td>Tempo de aquecimento</td><td>Necessário pré-aquecimento (~1 min) para leitura estável</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Sistemas de detecção de vazamento de gás em cozinhas industriais e residenciais, alarmes de incêndio por fumaça, monitoramento de ambientes com risco de explosão.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Conectado a um Arduino, o MQ-2 aciona um buzzer e envia um alerta via rede quando a concentração de gás ultrapassa um limiar de segurança.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Henan Hanwei Electronics (Winsen Electronics), fabricante chinês responsável pela série de sensores MQ.</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="MQ-2 Gas fumaca gases combustiveis">
+        <div class="card-img"><img src="./img/sensores/mq2.svg" alt="Ícone do sensor de gás e fumaça MQ-2"></div>
+        <div class="card-corpo">
+          <h2>MQ-2</h2>
+          <span class="badge">Categoria: Gás</span>
+          <span class="tag-sinal analogico">Analógico / Digital (com comparador)</span>
+          <h4>Conceito</h4>
+          <p>Sensor de gás semicondutor sensível a fumaça e a gases combustíveis como GLP, propano, metano e hidrogênio.
+          </p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>Possui um elemento sensível de dióxido de estanho (SnO2) que altera sua condutividade elétrica na presença
+            dos gases-alvo. Um filamento aquecedor interno mantém a temperatura de operação ideal para a reação química
+            de detecção.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Gases detectados</td>
+              <td>GLP, propano, metano, álcool, fumaça, hidrogênio</td>
+            </tr>
+            <tr>
+              <td>Alimentação</td>
+              <td>5V</td>
+            </tr>
+            <tr>
+              <td>Tempo de aquecimento</td>
+              <td>Necessário pré-aquecimento (~1 min) para leitura estável</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Sistemas de detecção de vazamento de gás em cozinhas industriais e residenciais, alarmes de incêndio por
+            fumaça, monitoramento de ambientes com risco de explosão.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Conectado a um Arduino, o MQ-2 aciona um buzzer e envia um alerta via rede quando a concentração de gás
+            ultrapassa um limiar de segurança.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Henan Hanwei Electronics (Winsen Electronics), fabricante chinês responsável pela série de sensores MQ.</p>
+        </div>
+      </article>
 
-        <!-- Solo -->
-        <article class="card-sensor" data-nome="Sensor Capacitivo Umidade do Solo agricultura">
-          <div class="card-img"><img src="./img/sensores/solo.svg" alt="Ícone do sensor capacitivo de umidade do solo"></div>
-          <div class="card-corpo">
-            <h2>Sensor Capacitivo de Umidade do Solo</h2>
-            <span class="badge">Categoria: Umidade</span>
-            <span class="tag-sinal analogico">Analógico</span>
-            <h4>Conceito</h4>
-            <p>Sensor que mede o nível de umidade presente no solo, muito usado em sistemas de irrigação automatizada e agricultura inteligente.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Duas placas capacitivas revestidas medem a capacitância do solo, que varia conforme o teor de água presente. Ao contrário dos sensores resistivos mais antigos, o modelo capacitivo não sofre corrosão por eletrólise, durando mais tempo.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Saída</td><td>Tensão analógica inversamente proporcional à umidade</td></tr>
-              <tr><td>Alimentação</td><td>3,3V a 5,5V</td></tr>
-              <tr><td>Durabilidade</td><td>Alta (sem corrosão de eletrodos)</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Irrigação automática em estufas e plantações, agricultura de precisão, monitoramento remoto de canteiros via IoT.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Um Arduino liga uma bomba d'água automaticamente quando a leitura do sensor indica que o solo está com umidade abaixo de 30%.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Modelo genérico difundido por fabricantes de eletrônica para hobby (ex: DFRobot, Diymore).</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="Sensor Capacitivo Umidade do Solo agricultura">
+        <div class="card-img"><img src="./img/sensores/solo.svg" alt="Ícone do sensor capacitivo de umidade do solo">
+        </div>
+        <div class="card-corpo">
+          <h2>Sensor Capacitivo de Umidade do Solo</h2>
+          <span class="badge">Categoria: Umidade</span>
+          <span class="tag-sinal analogico">Analógico</span>
+          <h4>Conceito</h4>
+          <p>Sensor que mede o nível de umidade presente no solo, muito usado em sistemas de irrigação automatizada e
+            agricultura inteligente.</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>Duas placas capacitivas revestidas medem a capacitância do solo, que varia conforme o teor de água
+            presente. Ao contrário dos sensores resistivos mais antigos, o modelo capacitivo não sofre corrosão por
+            eletrólise, durando mais tempo.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Saída</td>
+              <td>Tensão analógica inversamente proporcional à umidade</td>
+            </tr>
+            <tr>
+              <td>Alimentação</td>
+              <td>3,3V a 5,5V</td>
+            </tr>
+            <tr>
+              <td>Durabilidade</td>
+              <td>Alta (sem corrosão de eletrodos)</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Irrigação automática em estufas e plantações, agricultura de precisão, monitoramento remoto de canteiros
+            via IoT.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Um Arduino liga uma bomba d'água automaticamente quando a leitura do sensor indica que o solo está com
+            umidade abaixo de 30%.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Modelo genérico difundido por fabricantes de eletrônica para hobby (ex: DFRobot, Diymore).</p>
+        </div>
+      </article>
 
-        <!-- Corrente -->
-        <article class="card-sensor" data-nome="ACS712 Corrente eletrica sensor Hall">
-          <div class="card-img"><img src="./img/sensores/corrente.svg" alt="Ícone do sensor de corrente elétrica ACS712"></div>
-          <div class="card-corpo">
-            <h2>ACS712</h2>
-            <span class="badge">Categoria: Corrente</span>
-            <span class="tag-sinal analogico">Analógico</span>
-            <h4>Conceito</h4>
-            <p>Sensor de corrente elétrica baseado em efeito Hall, capaz de medir corrente contínua (DC) ou alternada (AC) sem contato elétrico direto com o circuito de potência.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>A corrente que passa por um condutor interno gera um campo magnético proporcional; um sensor de efeito Hall integrado detecta esse campo e converte em uma tensão de saída analógica proporcional à corrente medida.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Faixas disponíveis</td><td>±5A, ±20A, ±30A (modelos diferentes)</td></tr>
-              <tr><td>Sensibilidade típica</td><td>185 mV/A (modelo 5A), 100 mV/A (20A), 66 mV/A (30A)</td></tr>
-              <tr><td>Isolamento</td><td>2,1 kVRMS entre os pinos de potência e de sinal</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Monitoramento de consumo de energia de motores e máquinas, detecção de sobrecarga em painéis elétricos, proteção de circuitos.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>No exemplo de código da página do Arduino, a tensão de saída do ACS712 é convertida em amperes a partir da sensibilidade do sensor (V/A).</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Allegro MicroSystems (fabricante norte-americano do chip ACS712).</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="ACS712 Corrente eletrica sensor Hall">
+        <div class="card-img"><img src="./img/sensores/corrente.svg" alt="Ícone do sensor de corrente elétrica ACS712">
+        </div>
+        <div class="card-corpo">
+          <h2>ACS712</h2>
+          <span class="badge">Categoria: Corrente</span>
+          <span class="tag-sinal analogico">Analógico</span>
+          <h4>Conceito</h4>
+          <p>Sensor de corrente elétrica baseado em efeito Hall, capaz de medir corrente contínua (DC) ou alternada (AC)
+            sem contato elétrico direto com o circuito de potência.</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>A corrente que passa por um condutor interno gera um campo magnético proporcional; um sensor de efeito Hall
+            integrado detecta esse campo e converte em uma tensão de saída analógica proporcional à corrente medida.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Faixas disponíveis</td>
+              <td>±5A, ±20A, ±30A (modelos diferentes)</td>
+            </tr>
+            <tr>
+              <td>Sensibilidade típica</td>
+              <td>185 mV/A (modelo 5A), 100 mV/A (20A), 66 mV/A (30A)</td>
+            </tr>
+            <tr>
+              <td>Isolamento</td>
+              <td>2,1 kVRMS entre os pinos de potência e de sinal</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Monitoramento de consumo de energia de motores e máquinas, detecção de sobrecarga em painéis elétricos,
+            proteção de circuitos.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>No exemplo de código da página do Arduino, a tensão de saída do ACS712 é convertida em amperes a partir da
+            sensibilidade do sensor (V/A).</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Allegro MicroSystems (fabricante norte-americano do chip ACS712).</p>
+        </div>
+      </article>
 
-        <!-- Hall -->
-        <article class="card-sensor" data-nome="Sensor Hall A3144 Rotacao velocidade motor">
-          <div class="card-img"><img src="./img/sensores/hall.svg" alt="Ícone do sensor de rotação Hall A3144"></div>
-          <div class="card-corpo">
-            <h2>Sensor Hall A3144</h2>
-            <span class="badge">Categoria: Rotação</span>
-            <span class="tag-sinal digital">Digital</span>
-            <h4>Conceito</h4>
-            <p>Sensor de efeito Hall que detecta a presença de um campo magnético, muito usado para medir velocidade de rotação de motores e rodas.</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>Ao passar um ímã fixado em um eixo giratório próximo ao sensor, o campo magnético gera uma tensão Hall detectável; contando os pulsos por unidade de tempo, calcula-se a velocidade angular (RPM) do eixo.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Saída</td><td>Digital (comutação por presença de campo magnético)</td></tr>
-              <tr><td>Alimentação</td><td>4,5V a 24V</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Tacômetros digitais, controle de velocidade de esteiras e motores, encoders simples de baixo custo em robôs móveis.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Um ímã fixado na roda de um robô móvel passa pelo sensor Hall a cada volta, permitindo ao Arduino calcular a velocidade e a distância percorrida.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>Allegro MicroSystems (fabricante do chip A3144, também produzido sob licença por outras fábricas).</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="Sensor Hall A3144 Rotacao velocidade motor">
+        <div class="card-img"><img src="./img/sensores/hall.svg" alt="Ícone do sensor de rotação Hall A3144"></div>
+        <div class="card-corpo">
+          <h2>Sensor Hall A3144</h2>
+          <span class="badge">Categoria: Rotação</span>
+          <span class="tag-sinal digital">Digital</span>
+          <h4>Conceito</h4>
+          <p>Sensor de efeito Hall que detecta a presença de um campo magnético, muito usado para medir velocidade de
+            rotação de motores e rodas.</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>Ao passar um ímã fixado em um eixo giratório próximo ao sensor, o campo magnético gera uma tensão Hall
+            detectável; contando os pulsos por unidade de tempo, calcula-se a velocidade angular (RPM) do eixo.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Saída</td>
+              <td>Digital (comutação por presença de campo magnético)</td>
+            </tr>
+            <tr>
+              <td>Alimentação</td>
+              <td>4,5V a 24V</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Tacômetros digitais, controle de velocidade de esteiras e motores, encoders simples de baixo custo em robôs
+            móveis.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Um ímã fixado na roda de um robô móvel passa pelo sensor Hall a cada volta, permitindo ao Arduino calcular
+            a velocidade e a distância percorrida.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>Allegro MicroSystems (fabricante do chip A3144, também produzido sob licença por outras fábricas).</p>
+        </div>
+      </article>
 
-        <!-- RFID -->
-        <article class="card-sensor" data-nome="MFRC522 RFID controle de acesso identificacao">
-          <div class="card-img"><img src="./img/sensores/rfid.svg" alt="Ícone do módulo RFID MFRC522"></div>
-          <div class="card-corpo">
-            <h2>RFID MFRC522</h2>
-            <span class="badge">Categoria: RFID</span>
-            <span class="tag-sinal spi">SPI</span>
-            <h4>Conceito</h4>
-            <p>Módulo de identificação por radiofrequência (RFID) que permite ler e escrever dados em cartões e tags de proximidade (13,56 MHz).</p>
-            <h4>Princípio de Funcionamento</h4>
-            <p>O módulo emite um campo eletromagnético que alimenta passivamente o chip da tag/cartão RFID por indução; a tag responde retransmitindo seu identificador único, que é decodificado pelo módulo e enviado ao microcontrolador via SPI.</p>
-            <table class="tabela-specs">
-              <tr><th>Especificação</th><th>Valor</th></tr>
-              <tr><td>Frequência</td><td>13,56 MHz</td></tr>
-              <tr><td>Alcance de leitura</td><td>~3 cm a 5 cm</td></tr>
-              <tr><td>Comunicação</td><td>SPI</td></tr>
-            </table>
-            <h4>Aplicações IoT/Industriais</h4>
-            <p>Controle de acesso a áreas restritas, identificação e rastreamento de peças/paletes em linhas de produção, sistemas de ponto eletrônico.</p>
-            <h4>Exemplo de Uso</h4>
-            <p>Um leitor MFRC522 conectado a um Arduino libera o acesso a uma sala apenas quando reconhece o identificador de um cartão previamente cadastrado.</p>
-            <h4>Fabricantes / Modelos</h4>
-            <p>NXP Semiconductors (fabricante original do chip MFRC522).</p>
-          </div>
-        </article>
+      <article class="card-sensor" data-nome="MFRC522 RFID controle de acesso identificacao">
+        <div class="card-img"><img src="./img/sensores/rfid.svg" alt="Ícone do módulo RFID MFRC522"></div>
+        <div class="card-corpo">
+          <h2>RFID MFRC522</h2>
+          <span class="badge">Categoria: RFID</span>
+          <span class="tag-sinal spi">SPI</span>
+          <h4>Conceito</h4>
+          <p>Módulo de identificação por radiofrequência (RFID) que permite ler e escrever dados em cartões e tags de
+            proximidade (13,56 MHz).</p>
+          <h4>Princípio de Funcionamento</h4>
+          <p>O módulo emite um campo eletromagnético que alimenta passivamente o chip da tag/cartão RFID por indução; a
+            tag responde retransmitindo seu identificador único, que é decodificado pelo módulo e enviado ao
+            microcontrolador via SPI.</p>
+          <table class="tabela-specs">
+            <tr>
+              <th>Especificação</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td>Frequência</td>
+              <td>13,56 MHz</td>
+            </tr>
+            <tr>
+              <td>Alcance de leitura</td>
+              <td>~3 cm a 5 cm</td>
+            </tr>
+            <tr>
+              <td>Comunicação</td>
+              <td>SPI</td>
+            </tr>
+          </table>
+          <h4>Aplicações IoT/Industriais</h4>
+          <p>Controle de acesso a áreas restritas, identificação e rastreamento de peças/paletes em linhas de produção,
+            sistemas de ponto eletrônico.</p>
+          <h4>Exemplo de Uso</h4>
+          <p>Um leitor MFRC522 conectado a um Arduino libera o acesso a uma sala apenas quando reconhece o identificador
+            de um cartão previamente cadastrado.</p>
+          <h4>Fabricantes / Modelos</h4>
+          <p>NXP Semiconductors (fabricante original do chip MFRC522).</p>
+        </div>
+      </article>
 
-      </div>
-    </main>
+    </div>
+  </main>
 
-    <br>
-    <footer>
-      <p>By NexTheis &copy; &trade; </p>
-    </footer>
+  <br>
+  <footer>
+    <p>By NexTheis &copy; &trade; </p>
+  </footer>
 </body>
+
 </html>

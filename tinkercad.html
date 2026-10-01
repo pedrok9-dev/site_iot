@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./java.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
-    <title>Desafios de Sensoriamento (Tinkercad)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./java.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
+  <title>Desafios de Sensoriamento (Tinkercad)</title>
 </head>
+
 <body>
-    <header>
+  <header>
     <div class="off-screen-menu">
       <ul>
         <li><a href="./index.html">Início</a></li>
@@ -30,240 +32,238 @@
       </div>
       <h1 class="marca">NexTheis IoT</h1>
     </nav>
-    </header>
-    <br><br>
-    <main>
-      <h1 class="titulo">Desafios de Sensoriamento (Tinkercad)</h1>
-      <p class="subtitulo">Três projetos práticos simulados no Tinkercad, combinando sensores, lógica de controle e Arduino</p>
+  </header>
+  <br><br>
+  <main>
+    <h1 class="titulo">Desafios de Sensoriamento (Tinkercad)</h1>
+    <p class="subtitulo">Três projetos práticos simulados no Tinkercad, combinando sensores, lógica de controle e
+      Arduino</p>
 
-      <div class="ancora-menu">
-        <a class="ancora-link" href="#desafio1">Desafio 1 — Iluminação Inteligente</a>
-        <a class="ancora-link" href="#desafio2">Desafio 2 — Estacionamento Inteligente</a>
-        <a class="ancora-link" href="#desafio3">Desafio 3 — Ambiente Inteligente</a>
+    <div class="ancora-menu">
+      <a class="ancora-link" href="#desafio1">Desafio 1 — Iluminação Inteligente</a>
+      <a class="ancora-link" href="#desafio2">Desafio 2 — Estacionamento Inteligente</a>
+      <a class="ancora-link" href="#desafio3">Desafio 3 — Ambiente Inteligente</a>
+    </div>
+
+    <article class="desafio-card" id="desafio1">
+      <h2>Desafio 1 — Iluminação Inteligente</h2>
+      <p>Sistema que liga uma lâmpada (LED) automaticamente apenas quando há duas condições verdadeiras ao mesmo tempo:
+        presença de uma pessoa no ambiente (detectada pelo sensor PIR) e baixa luminosidade (detectada pelo LDR). É a
+        lógica clássica por trás da iluminação automática de corredores e áreas comuns, que evita desperdício de energia
+        ao não acender luzes em ambientes já iluminados naturalmente.</p>
+
+      <h4>Circuito</h4>
+      <div class="desafio-img">
+        <img src="./img/tinkercad/circuito-desafio1-iluminacao.png"
+          alt="Circuito do Desafio 1 no Tinkercad: Arduino Uno, sensor PIR, LDR e LED">
       </div>
 
-      <!-- DESAFIO 1 -->
-      <article class="desafio-card" id="desafio1">
-        <h2>Desafio 1 — Iluminação Inteligente</h2>
-        <p>Sistema que liga uma lâmpada (LED) automaticamente apenas quando há duas condições verdadeiras ao mesmo tempo: presença de uma pessoa no ambiente (detectada pelo sensor PIR) e baixa luminosidade (detectada pelo LDR). É a lógica clássica por trás da iluminação automática de corredores e áreas comuns, que evita desperdício de energia ao não acender luzes em ambientes já iluminados naturalmente.</p>
+      <h4>Código em C++</h4>
+      <div class="codigo-box">const int pinPIR = 2;
+        const int pinLDR = A0;
+        const int pinLED = 13;
+        const int limiteLuz = 500; // Ajuste conforme o nível de escuro desejado
 
-        <h4>Circuito</h4>
-        <div class="desafio-img">
-          <img src="./img/tinkercad/circuito-desafio1-iluminacao.png" alt="Circuito do Desafio 1 no Tinkercad: Arduino Uno, sensor PIR, LDR e LED">
-        </div>
+        void setup() {
+        pinMode(pinPIR, INPUT);
+        pinMode(pinLED, OUTPUT);
+        }
 
-        <h4>Código em C++</h4>
-        <div class="codigo-box">const int pinPIR = 2;
-const int pinLDR = A0;
-const int pinLED = 13;
-const int limiteLuz = 500; // Ajuste conforme o nível de escuro desejado
+        void loop() {
+        int presenca = digitalRead(pinPIR);
+        int valorLuminosidade = analogRead(pinLDR);
 
-void setup() {
-  pinMode(pinPIR, INPUT);
-  pinMode(pinLED, OUTPUT);
-}
+        // Regra: Pessoa presente + ambiente escuro -> LED ligado
+        if (presenca == HIGH && valorLuminosidade &lt; limiteLuz) {
+        digitalWrite(pinLED, HIGH);
+        } else {
+        digitalWrite(pinLED, LOW);
+        }
 
-void loop() {
-  int presenca = digitalRead(pinPIR);
-  int valorLuminosidade = analogRead(pinLDR);
+        delay(100);
+        }</div>
 
-  // Regra: Pessoa presente + ambiente escuro -> LED ligado
-  if (presenca == HIGH && valorLuminosidade &lt; limiteLuz) {
-    digitalWrite(pinLED, HIGH);
-  } else {
-    digitalWrite(pinLED, LOW);
-  }
-
-  delay(100);
-}</div>
-
-        <h4>Vídeo de Demonstração</h4>
+      <h4>Vídeo de Demonstração</h4>
+      <div class="video-placeholder">
         <div class="video-placeholder">
-          <!--
-            Espaço reservado para o vídeo do Desafio 1.
-            Substitua esta div "video-placeholder" por um embed real, por exemplo:
-
-            <div class="video-placeholder">
-              <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"
-                      title="Vídeo Desafio 1 - Iluminação Inteligente"
-                      allowfullscreen></iframe>
-            </div>
-          -->
-          <div class="icone-video">🎬</div>
-          <p>Espaço reservado para o vídeo de demonstração do Desafio 1.<br>Substitua este bloco por um &lt;iframe&gt; do YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+          <iframe src="./img/desafio 1.mp4" title="Vídeo Desafio 1 - Iluminação Inteligente" allowfullscreen></iframe>
         </div>
-      </article>
+        <div class="icone-video">🎬</div>
+        <p>Espaço reservado para o vídeo de demonstração do Desafio 1.<br>Substitua este bloco por um &lt;iframe&gt; do
+          YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+      </div>
+    </article>
 
-      <!-- DESAFIO 2 -->
-      <article class="desafio-card" id="desafio2">
-        <h2>Desafio 2 — Estacionamento Inteligente</h2>
-        <p>Sistema de auxílio ao estacionamento que mede continuamente a distância até um obstáculo com um sensor ultrassônico (HC-SR04) e sinaliza o quão perto o veículo está através de um LED. Um potenciômetro permite ajustar o limite de segurança entre 10 cm e 60 cm, simulando um controle de sensibilidade. Quando o objeto está distante, o LED permanece apagado; ao se aproximar, o LED começa a piscar cada vez mais rápido; e, muito próximo, fica aceso de forma contínua — o mesmo comportamento dos sensores de ré encontrados em veículos reais.</p>
+    <article class="desafio-card" id="desafio2">
+      <h2>Desafio 2 — Estacionamento Inteligente</h2>
+      <p>Sistema de auxílio ao estacionamento que mede continuamente a distância até um obstáculo com um sensor
+        ultrassônico (HC-SR04) e sinaliza o quão perto o veículo está através de um LED. Um potenciômetro permite
+        ajustar o limite de segurança entre 10 cm e 60 cm, simulando um controle de sensibilidade. Quando o objeto está
+        distante, o LED permanece apagado; ao se aproximar, o LED começa a piscar cada vez mais rápido; e, muito
+        próximo, fica aceso de forma contínua — o mesmo comportamento dos sensores de ré encontrados em veículos reais.
+      </p>
 
-        <h4>Circuito</h4>
-        <div class="desafio-img">
-          <img src="./img/tinkercad/circuito-desafio2-estacionamento.png" alt="Circuito do Desafio 2 no Tinkercad: Arduino Uno, sensor ultrassônico HC-SR04, potenciômetro e LED">
-        </div>
+      <h4>Circuito</h4>
+      <div class="desafio-img">
+        <img src="./img/tinkercad/circuito-desafio2-estacionamento.png"
+          alt="Circuito do Desafio 2 no Tinkercad: Arduino Uno, sensor ultrassônico HC-SR04, potenciômetro e LED">
+      </div>
 
-        <h4>Código em C++</h4>
-        <div class="codigo-box">const int pinTrig = 9;
-const int pinEcho = 8;
-const int pinPot = A0;
-const int pinLED = 3;
+      <h4>Código em C++</h4>
+      <div class="codigo-box">const int pinTrig = 9;
+        const int pinEcho = 8;
+        const int pinPot = A0;
+        const int pinLED = 3;
 
-long lerDistancia() {
-  digitalWrite(pinTrig, LOW);
-  delayMicroseconds(2);
-  digitalWrite(pinTrig, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(pinTrig, LOW);
+        long lerDistancia() {
+        digitalWrite(pinTrig, LOW);
+        delayMicroseconds(2);
+        digitalWrite(pinTrig, HIGH);
+        delayMicroseconds(10);
+        digitalWrite(pinTrig, LOW);
 
-  long duracao = pulseIn(pinEcho, HIGH);
-  return duracao * 0.034 / 2; // Converte tempo em centímetros
-}
+        long duracao = pulseIn(pinEcho, HIGH);
+        return duracao * 0.034 / 2; // Converte tempo em centímetros
+        }
 
-void setup() {
-  pinMode(pinTrig, OUTPUT);
-  pinMode(pinEcho, INPUT);
-  pinMode(pinLED, OUTPUT);
-}
+        void setup() {
+        pinMode(pinTrig, OUTPUT);
+        pinMode(pinEcho, INPUT);
+        pinMode(pinLED, OUTPUT);
+        }
 
-void loop() {
-  long distancia = lerDistancia();
-  int valPot = analogRead(pinPot);
+        void loop() {
+        long distancia = lerDistancia();
+        int valPot = analogRead(pinPot);
 
-  // O potenciômetro define o limite de segurança entre 10cm e 60cm
-  int limite = map(valPot, 0, 1023, 10, 60);
-  int limitePerigo = limite / 2;
+        // O potenciômetro define o limite de segurança entre 10cm e 60cm
+        int limite = map(valPot, 0, 1023, 10, 60);
+        int limitePerigo = limite / 2;
 
-  if (distancia &gt; limite) {
-    digitalWrite(pinLED, LOW); // Objeto distante
-  } else if (distancia &lt;= limitePerigo) {
-    digitalWrite(pinLED, HIGH); // Objeto muito próximo (ligado contínuo)
-  } else {
-    // Objeto se aproximando: velocidade do pisca aumenta conforme chega perto
-    int tempoPisca = map(distancia, limitePerigo, limite, 40, 300);
-    digitalWrite(pinLED, HIGH);
-    delay(tempoPisca);
-    digitalWrite(pinLED, LOW);
-    delay(tempoPisca);
-  }
+        if (distancia &gt; limite) {
+        digitalWrite(pinLED, LOW); // Objeto distante
+        } else if (distancia &lt;= limitePerigo) {
+        digitalWrite(pinLED, HIGH); // Objeto muito próximo (ligado contínuo)
+        } else {
+        // Objeto se aproximando: velocidade do pisca aumenta conforme chega perto
+        int tempoPisca = map(distancia, limitePerigo, limite, 40, 300);
+        digitalWrite(pinLED, HIGH);
+        delay(tempoPisca);
+        digitalWrite(pinLED, LOW);
+        delay(tempoPisca);
+        }
 
-  delay(30);
-}</div>
+        delay(30);
+        }</div>
 
-        <h4>Vídeo de Demonstração</h4>
+      <h4>Vídeo de Demonstração</h4>
+      <div class="video-placeholder">
         <div class="video-placeholder">
-          <!--
-            Espaço reservado para o vídeo do Desafio 2.
-            Substitua esta div "video-placeholder" por um embed real, por exemplo:
-
-            <div class="video-placeholder">
-              <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"
-                      title="Vídeo Desafio 2 - Estacionamento Inteligente"
-                      allowfullscreen></iframe>
-            </div>
-          -->
-          <div class="icone-video">🎬</div>
-          <p>Espaço reservado para o vídeo de demonstração do Desafio 2.<br>Substitua este bloco por um &lt;iframe&gt; do YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+          <iframe src="./img/desafio 2.mp4" title="Vídeo Desafio 2 - Estacionamento Inteligente"
+            allowfullscreen></iframe>
         </div>
-      </article>
+        <div class="icone-video">🎬</div>
+        <p>Espaço reservado para o vídeo de demonstração do Desafio 2.<br>Substitua este bloco por um &lt;iframe&gt; do
+          YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+      </div>
+    </article>
 
-      <!-- DESAFIO 3 -->
-      <article class="desafio-card" id="desafio3">
-        <h2>Desafio 3 — Ambiente Inteligente</h2>
-        <p>Estação de monitoramento ambiental que lê temperatura (sensor TMP36) e umidade (simulada por um potenciômetro), acendendo LEDs indicadores conforme a condição do ambiente: verde para condições adequadas, vermelho para temperatura elevada e amarelo para umidade baixa. Todas as leituras também são enviadas ao Monitor Serial em tempo real, exibindo o status textual da leitura — recurso muito usado em sistemas reais de monitoramento remoto antes do envio dos dados para a nuvem.</p>
+    <article class="desafio-card" id="desafio3">
+      <h2>Desafio 3 — Ambiente Inteligente</h2>
+      <p>Estação de monitoramento ambiental que lê temperatura (sensor TMP36) e umidade (simulada por um potenciômetro),
+        acendendo LEDs indicadores conforme a condição do ambiente: verde para condições adequadas, vermelho para
+        temperatura elevada e amarelo para umidade baixa. Todas as leituras também são enviadas ao Monitor Serial em
+        tempo real, exibindo o status textual da leitura — recurso muito usado em sistemas reais de monitoramento remoto
+        antes do envio dos dados para a nuvem.</p>
 
-        <h4>Circuito</h4>
-        <div class="desafio-img">
-          <img src="./img/tinkercad/circuito-desafio3-ambiente.png" alt="Circuito do Desafio 3 no Tinkercad: Arduino Uno, sensor TMP36, potenciômetro e três LEDs indicadores">
-        </div>
+      <h4>Circuito</h4>
+      <div class="desafio-img">
+        <img src="./img/tinkercad/circuito-desafio3-ambiente.png"
+          alt="Circuito do Desafio 3 no Tinkercad: Arduino Uno, sensor TMP36, potenciômetro e três LEDs indicadores">
+      </div>
 
-        <h4>Monitor Serial</h4>
-        <div class="desafio-img">
-          <img src="./img/tinkercad/monitor-serial-desafio3.png" alt="Saída do Monitor Serial do Desafio 3 mostrando temperatura, umidade e status">
-        </div>
+      <h4>Monitor Serial</h4>
+      <div class="desafio-img">
+        <img src="./img/tinkercad/monitor-serial-desafio3.png"
+          alt="Saída do Monitor Serial do Desafio 3 mostrando temperatura, umidade e status">
+      </div>
 
-        <h4>Código em C++</h4>
-        <div class="codigo-box">const int pinTemp = A0;
-const int pinUmidade = A1;
-const int ledVerde = 2;
-const int ledVermelho = 3;
-const int ledAmarelo = 4;
+      <h4>Código em C++</h4>
+      <div class="codigo-box">const int pinTemp = A0;
+        const int pinUmidade = A1;
+        const int ledVerde = 2;
+        const int ledVermelho = 3;
+        const int ledAmarelo = 4;
 
-const float tempLimite = 30.0; // Limite superior de temperatura (°C)
-const int umidadeLimite = 40;  // Limite inferior de umidade (%)
+        const float tempLimite = 30.0; // Limite superior de temperatura (°C)
+        const int umidadeLimite = 40; // Limite inferior de umidade (%)
 
-void setup() {
-  pinMode(ledVerde, OUTPUT);
-  pinMode(ledVermelho, OUTPUT);
-  pinMode(ledAmarelo, OUTPUT);
-  Serial.begin(9600); // Inicializa comunicação serial exigida
-}
+        void setup() {
+        pinMode(ledVerde, OUTPUT);
+        pinMode(ledVermelho, OUTPUT);
+        pinMode(ledAmarelo, OUTPUT);
+        Serial.begin(9600); // Inicializa comunicação serial exigida
+        }
 
-void loop() {
-  // Conversão de leitura analógica do TMP36 para Celsius
-  int leituraTemp = analogRead(pinTemp);
-  float voltagem = leituraTemp * (5.0 / 1023.0);
-  float temperatura = (voltagem - 0.5) * 100.0;
+        void loop() {
+        // Conversão de leitura analógica do TMP36 para Celsius
+        int leituraTemp = analogRead(pinTemp);
+        float voltagem = leituraTemp * (5.0 / 1023.0);
+        float temperatura = (voltagem - 0.5) * 100.0;
 
-  // Conversão da leitura do potenciômetro para porcentagem de umidade
-  int umidade = map(analogRead(pinUmidade), 0, 1023, 0, 100);
+        // Conversão da leitura do potenciômetro para porcentagem de umidade
+        int umidade = map(analogRead(pinUmidade), 0, 1023, 0, 100);
 
-  bool tempElevada = (temperatura &gt; tempLimite);
-  bool umidadeBaixa = (umidade &lt; umidadeLimite);
+        bool tempElevada = (temperatura &gt; tempLimite);
+        bool umidadeBaixa = (umidade &lt; umidadeLimite);
 
-  // Lógica dos LEDs indicadores
-  if (!tempElevada && !umidadeBaixa) {
-    digitalWrite(ledVerde, HIGH);
-    digitalWrite(ledVermelho, LOW);
-    digitalWrite(ledAmarelo, LOW);
-  } else {
-    digitalWrite(ledVerde, LOW);
-    digitalWrite(ledVermelho, tempElevada ? HIGH : LOW);
-    digitalWrite(ledAmarelo, umidadeBaixa ? HIGH : LOW);
-  }
+        // Lógica dos LEDs indicadores
+        if (!tempElevada && !umidadeBaixa) {
+        digitalWrite(ledVerde, HIGH);
+        digitalWrite(ledVermelho, LOW);
+        digitalWrite(ledAmarelo, LOW);
+        } else {
+        digitalWrite(ledVerde, LOW);
+        digitalWrite(ledVermelho, tempElevada ? HIGH : LOW);
+        digitalWrite(ledAmarelo, umidadeBaixa ? HIGH : LOW);
+        }
 
-  // Saída de dados no Monitor Serial
-  Serial.print("Temperatura: ");
-  Serial.print(temperatura);
-  Serial.print(" C | Umidade: ");
-  Serial.print(umidade);
-  Serial.print("% | Status: ");
+        // Saída de dados no Monitor Serial
+        Serial.print("Temperatura: ");
+        Serial.print(temperatura);
+        Serial.print(" C | Umidade: ");
+        Serial.print(umidade);
+        Serial.print("% | Status: ");
 
-  if (tempElevada && umidadeBaixa) {
-    Serial.println("ALERTA CRÍTICO (Temp Alta + Umidade Baixa)");
-  } else if (tempElevada) {
-    Serial.println("Alerta: Temperatura Elevada");
-  } else if (umidadeBaixa) {
-    Serial.println("Alerta: Umidade Inadequada");
-  } else {
-    Serial.println("Condicoes Adequadas");
-  }
+        if (tempElevada && umidadeBaixa) {
+        Serial.println("ALERTA CRÍTICO (Temp Alta + Umidade Baixa)");
+        } else if (tempElevada) {
+        Serial.println("Alerta: Temperatura Elevada");
+        } else if (umidadeBaixa) {
+        Serial.println("Alerta: Umidade Inadequada");
+        } else {
+        Serial.println("Condicoes Adequadas");
+        }
 
-  delay(1000);
-}</div>
+        delay(1000);
+        }</div>
 
-        <h4>Vídeo de Demonstração</h4>
+      <h4>Vídeo de Demonstração</h4>
+      <div class="video-placeholder">
         <div class="video-placeholder">
-          <!--
-            Espaço reservado para o vídeo do Desafio 3.
-            Substitua esta div "video-placeholder" por um embed real, por exemplo:
-
-            <div class="video-placeholder">
-              <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"
-                      title="Vídeo Desafio 3 - Ambiente Inteligente"
-                      allowfullscreen></iframe>
-            </div>
-          -->
-          <div class="icone-video">🎬</div>
-          <p>Espaço reservado para o vídeo de demonstração do Desafio 3.<br>Substitua este bloco por um &lt;iframe&gt; do YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+          <iframe src="./img/desafio 3.mp4" title="Vídeo Desafio 3 - Ambiente Inteligente" allowfullscreen></iframe>
         </div>
-      </article>
+        <div class="icone-video">🎬</div>
+        <p>Espaço reservado para o vídeo de demonstração do Desafio 3.<br>Substitua este bloco por um &lt;iframe&gt; do
+          YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+      </div>
+    </article>
 
-    </main>
-    <br>
-    <footer>
-      <p>By NexTheis &copy; &trade; </p>
-    </footer>
+  </main>
+  <br>
+  <footer>
+    <p>By NexTheis &copy; &trade; </p>
+  </footer>
 </body>
+
 </html>

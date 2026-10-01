@@ -1,9 +1,4 @@
-// ============================================================
-// Quiz: Robótica Industrial, Sensores e IoT — NexTheis IoT
-// ============================================================
-
 const QUESTOES = [
-  // 1) ROBÔS
   {
     area: "Robótica Industrial",
     contexto: "Uma indústria alimentícia deseja aumentar a velocidade de separação e embalagem de pequenos itens em uma linha de produção, exigindo ciclos de altíssima velocidade (mais de 150 movimentos por minuto). O robô será montado em uma estrutura fixa suspensa acima da esteira, movimentando apenas um efetuador leve para captar os itens.",
@@ -16,7 +11,6 @@ const QUESTOES = [
     ]
   },
 
-  // 2) SENSORES (1)
   {
     area: "Sensores IoT",
     contexto: "Em uma linha de produção, é necessário contar automaticamente quantas peças metálicas passam por um determinado ponto da esteira. A solução não pode ter contato físico com as peças, pois isso desgastaria o sensor rapidamente.",
@@ -29,7 +23,6 @@ const QUESTOES = [
     ]
   },
 
-  // 3) SENSORES (2)
   {
     area: "Sensores IoT",
     contexto: "Um sistema de irrigação automática precisa acionar uma bomba d'água sempre que o solo de uma horta estiver seco, monitorando continuamente o teor de água presente na terra ao longo de várias semanas de uso contínuo.",
@@ -42,7 +35,6 @@ const QUESTOES = [
     ]
   },
 
-  // 4) MULTÍMETRO (com imagem)
   {
     area: "Multímetro",
     contexto: "Antes de conectar um sensor a uma placa NodeMCU, um técnico decide verificar se a fonte de alimentação está realmente fornecendo os 5V esperados. Ele configura o multímetro conforme a imagem abaixo e realiza a medição entre o pino 5V e o pino GND da placa.",
@@ -56,7 +48,6 @@ const QUESTOES = [
     ]
   },
 
-  // 5) ARDUINO (1)
   {
     area: "Arduino",
     contexto: "Um estudante deseja ler a tensão gerada por um sensor LM35 através de uma entrada analógica do Arduino Uno, convertendo posteriormente essa leitura em graus Celsius.",
@@ -69,7 +60,6 @@ const QUESTOES = [
     ]
   },
 
-  // 6) ARDUINO (2)
   {
     area: "Arduino",
     contexto: "Durante a montagem de um circuito com um sensor PIR conectado a uma entrada digital do Arduino Uno, um estudante percebeu que o LED conectado a uma saída digital não acendia, mesmo quando havia movimento sendo detectado no ambiente.",
@@ -82,7 +72,6 @@ const QUESTOES = [
     ]
   },
 
-  // 7) ESP8266
   {
     area: "ESP8266 / NodeMCU",
     contexto: "Um estudante deseja conectar um sensor DHT22, originalmente utilizado em projetos com sinais de até 5V, diretamente a uma entrada digital de uma placa NodeMCU (ESP8266).",
@@ -95,7 +84,6 @@ const QUESTOES = [
     ]
   },
 
-  // 8) CÓDIGO (1) — imagem tipo screenshot VS Code
   {
     area: "Código",
     contexto: "O trecho de código abaixo foi utilizado em um sensor ultrassônico HC-SR04 conectado a uma NodeMCU, controlando o acionamento de um LED de alerta.",
@@ -109,7 +97,6 @@ const QUESTOES = [
     ]
   },
 
-  // 9) CÓDIGO (2) — bug spotting
   {
     area: "Código",
     contexto: "Um estudante montou o código abaixo para piscar um LED conectado ao pino D2 de uma NodeMCU, mas o LED permanece sempre apagado, não importa quanto tempo o circuito fique ligado.",
@@ -123,7 +110,6 @@ const QUESTOES = [
     ]
   },
 
-  // 10) CÓDIGO (3) — map()
   {
     area: "Código",
     contexto: "Um Arduino lê o valor de um potenciômetro conectado ao pino A0 (variação de 0 a 1023) e utiliza a função map() para converter essa leitura para uma nova faixa, de 10 a 60, antes de exibir o resultado no Monitor Serial.",
@@ -138,9 +124,6 @@ const QUESTOES = [
   }
 ];
 
-// ============================================================
-// Estado do jogo
-// ============================================================
 const CHAVE_RANKING = "nextheis_quiz_ranking_v1";
 const MAX_RANKING_ENTRIES = 100;
 const PONTOS_POR_ACERTO = 10;
@@ -178,7 +161,6 @@ function iniciarQuiz() {
 
   tempoInicio = Date.now();
 
-  // Embaralha a ordem das alternativas de cada questão (mantendo a original intacta)
   perguntasEmbaralhadas = QUESTOES.map((q) => {
     const alternativas = embaralhar(q.alternativas);
     return { ...q, alternativas };
@@ -323,9 +305,6 @@ function reiniciarQuiz() {
   telaIntro.classList.remove("escondido");
 }
 
-// ============================================================
-// Ranking (100% local, via localStorage — sem backend/servidor)
-// ============================================================
 
 function carregarRanking() {
   try {
@@ -348,14 +327,12 @@ function salvarRanking(lista) {
 }
 
 function ordenarRanking(lista) {
-  // Critério: mais pontos primeiro; em empate, menor tempo vence
   return lista.slice().sort((a, b) => {
     if (b.pontos !== a.pontos) return b.pontos - a.pontos;
     return a.tempoSegundos - b.tempoSegundos;
   });
 }
 
-// Salva a pontuação da partida atual no ranking local e retorna a posição (1º, 2º...)
 function registrarPontuacao(nome, acertosPartida, errosPartida, pontos, tempoSegundos) {
   const lista = carregarRanking();
 
@@ -372,14 +349,12 @@ function registrarPontuacao(nome, acertosPartida, errosPartida, pontos, tempoSeg
 
   let ordenada = ordenarRanking(lista);
 
-  // Mantém o ranking em um tamanho razoável, preservando os melhores
   if (ordenada.length > MAX_RANKING_ENTRIES) {
     ordenada = ordenada.slice(0, MAX_RANKING_ENTRIES);
   }
 
   salvarRanking(ordenada);
 
-  // Descobre a posição da entrada que acabamos de jogar
   const posicao = ordenada.findIndex((item) => item === novaEntrada) + 1;
   return posicao > 0 ? posicao : ordenada.length;
 }

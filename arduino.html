@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./java.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
-    <title>Arduino - Conceito, Funcionamento e Programação</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./java.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
+  <title>Arduino - Conceito, Funcionamento e Programação</title>
 </head>
+
 <body>
-    <header>
+  <header>
     <div class="off-screen-menu">
       <ul>
         <li><a href="./index.html">Início</a></li>
@@ -30,319 +32,342 @@
       </div>
       <h1 class="marca">NexTheis IoT</h1>
     </nav>
-    </header>
-    <br><br>
-    <main>
-      <h1 class="titulo">Arduino</h1>
-      <p class="subtitulo">Conceito, características, funcionamento e exemplos de programação com 10 sensores</p>
-
-      <section class="p0">
-        <p class="p1">O que é o Arduino?</p>
-        <br>
-        <p class="p2">O Arduino é uma plataforma de prototipagem eletrônica de código aberto (open source), composta por uma placa de hardware com um microcontrolador e por um ambiente de desenvolvimento integrado (IDE) próprio, no qual os programas — chamados de <em>sketches</em> — são escritos em uma linguagem baseada em C/C++.</p>
-        <br>
-        <div class="img">
-          <img src="./img/arduino.jfif" alt="Placa Arduino utilizada em projetos de automação e IoT">
-        </div>
-        <br>
-        <p class="p2">Criado originalmente para facilitar o aprendizado de eletrônica e programação, o Arduino se tornou uma das plataformas mais utilizadas do mundo tanto na educação quanto em projetos profissionais de automação residencial, robótica e prototipagem de sistemas IoT industriais.</p>
-      </section>
-
-      <section class="p0">
-        <p class="p1">Características e Funcionamento</p>
-        <br>
-        <p class="p3">Estrutura de hardware</p>
-        <br>
-        <p class="p2">Toda placa Arduino é organizada em torno de um microcontrolador (na maioria dos modelos, um chip da família Atmel/Microchip AVR, como o ATmega328P no Arduino Uno). Esse microcontrolador reúne, em um único chip, processador, memória e periféricos de entrada/saída, funcionando como um pequeno computador dedicado a uma única tarefa.</p>
-        <br>
-        <div class="img">
-          <img src="./img/arduino2eexpli.jpg" alt="Explicação do funcionamento interno do Arduino">
-        </div>
-        <br>
-        <p class="p3">Entradas e Saídas Digitais</p>
-        <br>
-        <p class="p2">As portas digitais trabalham apenas com dois estados: nível alto (HIGH/1, geralmente 5V ou 3,3V) e nível baixo (LOW/0, 0V). Entradas digitais são usadas para ler botões, sensores de presença (PIR) e chaves; saídas digitais controlam LEDs, relés, buzzers e outros dispositivos on/off.</p>
-        <br>
-        <p class="p3">Entradas e Saídas Analógicas</p>
-        <br>
-        <p class="p2">As entradas analógicas (pinos A0-A5 no Uno) permitem ler valores contínuos, como a tensão gerada por um LM35 ou um LDR, através de um Conversor Analógico-Digital (ADC) de 10 bits, que transforma a tensão lida em um número de 0 a 1023. As "saídas analógicas" do Arduino, na verdade, usam PWM (Modulação por Largura de Pulso) para simular um valor intermediário, ligando e desligando o pino rapidamente em diferentes proporções.</p>
-        <br>
-        <div class="img">
-          <img src="./img/arduiuno3.webp" alt="Entradas e saídas do Arduino">
-        </div>
-        <br>
-        <p class="p3">Comunicação</p>
-        <br>
-        <p class="p2">O Arduino se comunica com sensores e módulos através de diferentes protocolos: <strong>Digital simples</strong> (um fio, nível alto/baixo), <strong>1-Wire</strong> (múltiplos sensores em um só fio, como o DS18B20), <strong>I2C</strong> (dois fios: SDA e SCL, usado por sensores como o BH1750), <strong>SPI</strong> (quatro fios, usado pelo módulo RFID MFRC522) e <strong>UART/Serial</strong> (comunicação com o computador via USB, ou com módulos como GPS e Bluetooth).</p>
-        <br>
-        <p class="p3">Vantagens e Desvantagens</p>
-        <br>
-        <p class="p2">Entre as vantagens do Arduino estão o baixo custo, a facilidade de uso, a enorme comunidade e documentação disponível, e a compatibilidade com centenas de sensores e módulos prontos. Como desvantagens, possui limitações de processamento, memória e velocidade quando comparado a microcontroladores mais avançados como o ESP32 ou a computadores de placa única como o Raspberry Pi — por isso, em projetos IoT que exigem conectividade Wi-Fi nativa, é comum substituir o Arduino pelo ESP32, que utiliza a mesma linguagem de programação.</p>
-      </section>
-
-      <section class="p0">
-        <p class="p1">Exemplos de Programação com Sensores</p>
-        <p class="p2">Abaixo estão 10 exemplos comentados de código Arduino, cada um utilizando um dos sensores do <a href="./sensores.html" style="color:#3f6fe0;">catálogo de sensores IoT</a>.</p>
-
-        <p class="codigo-titulo">1. DHT22 — Temperatura e Umidade</p>
-        <div class="codigo-box">#include &lt;DHT.h&gt;
-
-#define PINO_DHT 2      // Pino digital conectado ao DHT22
-#define TIPO_DHT DHT22
-
-DHT dht(PINO_DHT, TIPO_DHT);
-
-void setup() {
-  Serial.begin(9600);
-  dht.begin();          // Inicializa o sensor
-}
-
-void loop() {
-  float umidade = dht.readHumidity();       // Lê a umidade relativa (%)
-  float temperatura = dht.readTemperature(); // Lê a temperatura (°C)
-
-  if (isnan(umidade) || isnan(temperatura)) {
-    Serial.println("Falha na leitura do DHT22!");
-    return;
-  }
-
-  Serial.print("Temperatura: ");
-  Serial.print(temperatura);
-  Serial.print(" C  |  Umidade: ");
-  Serial.print(umidade);
-  Serial.println(" %");
-
-  delay(2000); // O DHT22 exige intervalo mínimo entre leituras
-}</div>
-
-        <p class="codigo-titulo">2. LM35 — Temperatura Analógica</p>
-        <div class="codigo-box">#define PINO_LM35 A0 // Pino analógico conectado à saída do LM35
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  int leitura = analogRead(PINO_LM35);        // Lê valor bruto do ADC (0-1023)
-  float tensao = (leitura / 1023.0) * 5.0;    // Converte para tensão (0-5V)
-  float temperatura = tensao * 100.0;         // LM35: 10 mV por grau Celsius
-
-  Serial.print("Temperatura: ");
-  Serial.print(temperatura);
-  Serial.println(" C");
-
-  delay(1000);
-}</div>
+  </header>
+  <br><br>
+  <main>
+    <h1 class="titulo">Arduino</h1>
+    <p class="subtitulo">Conceito, características, funcionamento e exemplos de programação com 10 sensores</p>
+
+    <section class="p0">
+      <p class="p1">O que é o Arduino?</p>
+      <br>
+      <p class="p2">O Arduino é uma plataforma de prototipagem eletrônica de código aberto (open source), composta por
+        uma placa de hardware com um microcontrolador e por um ambiente de desenvolvimento integrado (IDE) próprio, no
+        qual os programas — chamados de <em>sketches</em> — são escritos em uma linguagem baseada em C/C++.</p>
+      <br>
+      <div class="img">
+        <img src="./img/arduino.jfif" alt="Placa Arduino utilizada em projetos de automação e IoT">
+      </div>
+      <br>
+      <p class="p2">Criado originalmente para facilitar o aprendizado de eletrônica e programação, o Arduino se tornou
+        uma das plataformas mais utilizadas do mundo tanto na educação quanto em projetos profissionais de automação
+        residencial, robótica e prototipagem de sistemas IoT industriais.</p>
+    </section>
+
+    <section class="p0">
+      <p class="p1">Características e Funcionamento</p>
+      <br>
+      <p class="p3">Estrutura de hardware</p>
+      <br>
+      <p class="p2">Toda placa Arduino é organizada em torno de um microcontrolador (na maioria dos modelos, um chip da
+        família Atmel/Microchip AVR, como o ATmega328P no Arduino Uno). Esse microcontrolador reúne, em um único chip,
+        processador, memória e periféricos de entrada/saída, funcionando como um pequeno computador dedicado a uma única
+        tarefa.</p>
+      <br>
+      <div class="img">
+        <img src="./img/arduino2eexpli.jpg" alt="Explicação do funcionamento interno do Arduino">
+      </div>
+      <br>
+      <p class="p3">Entradas e Saídas Digitais</p>
+      <br>
+      <p class="p2">As portas digitais trabalham apenas com dois estados: nível alto (HIGH/1, geralmente 5V ou 3,3V) e
+        nível baixo (LOW/0, 0V). Entradas digitais são usadas para ler botões, sensores de presença (PIR) e chaves;
+        saídas digitais controlam LEDs, relés, buzzers e outros dispositivos on/off.</p>
+      <br>
+      <p class="p3">Entradas e Saídas Analógicas</p>
+      <br>
+      <p class="p2">As entradas analógicas (pinos A0-A5 no Uno) permitem ler valores contínuos, como a tensão gerada por
+        um LM35 ou um LDR, através de um Conversor Analógico-Digital (ADC) de 10 bits, que transforma a tensão lida em
+        um número de 0 a 1023. As "saídas analógicas" do Arduino, na verdade, usam PWM (Modulação por Largura de Pulso)
+        para simular um valor intermediário, ligando e desligando o pino rapidamente em diferentes proporções.</p>
+      <br>
+      <div class="img">
+        <img src="./img/arduiuno3.webp" alt="Entradas e saídas do Arduino">
+      </div>
+      <br>
+      <p class="p3">Comunicação</p>
+      <br>
+      <p class="p2">O Arduino se comunica com sensores e módulos através de diferentes protocolos: <strong>Digital
+          simples</strong> (um fio, nível alto/baixo), <strong>1-Wire</strong> (múltiplos sensores em um só fio, como o
+        DS18B20), <strong>I2C</strong> (dois fios: SDA e SCL, usado por sensores como o BH1750), <strong>SPI</strong>
+        (quatro fios, usado pelo módulo RFID MFRC522) e <strong>UART/Serial</strong> (comunicação com o computador via
+        USB, ou com módulos como GPS e Bluetooth).</p>
+      <br>
+      <p class="p3">Vantagens e Desvantagens</p>
+      <br>
+      <p class="p2">Entre as vantagens do Arduino estão o baixo custo, a facilidade de uso, a enorme comunidade e
+        documentação disponível, e a compatibilidade com centenas de sensores e módulos prontos. Como desvantagens,
+        possui limitações de processamento, memória e velocidade quando comparado a microcontroladores mais avançados
+        como o ESP32 ou a computadores de placa única como o Raspberry Pi — por isso, em projetos IoT que exigem
+        conectividade Wi-Fi nativa, é comum substituir o Arduino pelo ESP32, que utiliza a mesma linguagem de
+        programação.</p>
+    </section>
+
+    <section class="p0">
+      <p class="p1">Exemplos de Programação com Sensores</p>
+      <p class="p2">Abaixo estão 10 exemplos comentados de código Arduino, cada um utilizando um dos sensores do <a
+          href="./sensores.html" style="color:#3f6fe0;">catálogo de sensores IoT</a>.</p>
+
+      <p class="codigo-titulo">1. DHT22 — Temperatura e Umidade</p>
+      <div class="codigo-box">#include &lt;DHT.h&gt;
+
+        #define PINO_DHT 2 // Pino digital conectado ao DHT22
+        #define TIPO_DHT DHT22
+
+        DHT dht(PINO_DHT, TIPO_DHT);
+
+        void setup() {
+        Serial.begin(9600);
+        dht.begin(); // Inicializa o sensor
+        }
+
+        void loop() {
+        float umidade = dht.readHumidity(); // Lê a umidade relativa (%)
+        float temperatura = dht.readTemperature(); // Lê a temperatura (°C)
+
+        if (isnan(umidade) || isnan(temperatura)) {
+        Serial.println("Falha na leitura do DHT22!");
+        return;
+        }
+
+        Serial.print("Temperatura: ");
+        Serial.print(temperatura);
+        Serial.print(" C | Umidade: ");
+        Serial.print(umidade);
+        Serial.println(" %");
+
+        delay(2000); // O DHT22 exige intervalo mínimo entre leituras
+        }</div>
+
+      <p class="codigo-titulo">2. LM35 — Temperatura Analógica</p>
+      <div class="codigo-box">#define PINO_LM35 A0 // Pino analógico conectado à saída do LM35
+
+        void setup() {
+        Serial.begin(9600);
+        }
+
+        void loop() {
+        int leitura = analogRead(PINO_LM35); // Lê valor bruto do ADC (0-1023)
+        float tensao = (leitura / 1023.0) * 5.0; // Converte para tensão (0-5V)
+        float temperatura = tensao * 100.0; // LM35: 10 mV por grau Celsius
+
+        Serial.print("Temperatura: ");
+        Serial.print(temperatura);
+        Serial.println(" C");
+
+        delay(1000);
+        }</div>
+
+      <p class="codigo-titulo">3. DS18B20 — Temperatura Digital (1-Wire)</p>
+      <div class="codigo-box">#include &lt;OneWire.h&gt;
+        #include &lt;DallasTemperature.h&gt;
+
+        #define PINO_BARRAMENTO 4 // Pino digital do barramento 1-Wire
+
+        OneWire oneWire(PINO_BARRAMENTO);
+        DallasTemperature sensores(&amp;oneWire);
+
+        void setup() {
+        Serial.begin(9600);
+        sensores.begin(); // Detecta todos os sensores DS18B20 no barramento
+        }
+
+        void loop() {
+        sensores.requestTemperatures(); // Solicita nova leitura
+        float temp = sensores.getTempCByIndex(0); // Lê o primeiro sensor do barramento
 
-        <p class="codigo-titulo">3. DS18B20 — Temperatura Digital (1-Wire)</p>
-        <div class="codigo-box">#include &lt;OneWire.h&gt;
-#include &lt;DallasTemperature.h&gt;
+        Serial.print("Temperatura da água/solo: ");
+        Serial.print(temp);
+        Serial.println(" C");
+
+        delay(1000);
+        }</div>
+
+      <p class="codigo-titulo">4. HC-SR04 — Distância por Ultrassom</p>
+      <div class="codigo-box">#define PINO_TRIGGER 9
+        #define PINO_ECHO 10
+
+        void setup() {
+        Serial.begin(9600);
+        pinMode(PINO_TRIGGER, OUTPUT);
+        pinMode(PINO_ECHO, INPUT);
+        }
+
+        void loop() {
+        // Envia um pulso ultrassônico de 10 microssegundos
+        digitalWrite(PINO_TRIGGER, LOW);
+        delayMicroseconds(2);
+        digitalWrite(PINO_TRIGGER, HIGH);
+        delayMicroseconds(10);
+        digitalWrite(PINO_TRIGGER, LOW);
 
-#define PINO_BARRAMENTO 4 // Pino digital do barramento 1-Wire
-
-OneWire oneWire(PINO_BARRAMENTO);
-DallasTemperature sensores(&amp;oneWire);
-
-void setup() {
-  Serial.begin(9600);
-  sensores.begin(); // Detecta todos os sensores DS18B20 no barramento
-}
-
-void loop() {
-  sensores.requestTemperatures();               // Solicita nova leitura
-  float temp = sensores.getTempCByIndex(0);     // Lê o primeiro sensor do barramento
-
-  Serial.print("Temperatura da água/solo: ");
-  Serial.print(temp);
-  Serial.println(" C");
-
-  delay(1000);
-}</div>
-
-        <p class="codigo-titulo">4. HC-SR04 — Distância por Ultrassom</p>
-        <div class="codigo-box">#define PINO_TRIGGER 9
-#define PINO_ECHO 10
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(PINO_TRIGGER, OUTPUT);
-  pinMode(PINO_ECHO, INPUT);
-}
-
-void loop() {
-  // Envia um pulso ultrassônico de 10 microssegundos
-  digitalWrite(PINO_TRIGGER, LOW);
-  delayMicroseconds(2);
-  digitalWrite(PINO_TRIGGER, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(PINO_TRIGGER, LOW);
-
-  // Mede o tempo até o eco retornar
-  long tempoEco = pulseIn(PINO_ECHO, HIGH);
-
-  // Calcula a distância: (tempo * velocidade do som) / 2 (ida e volta)
-  float distanciaCm = (tempoEco * 0.0343) / 2;
-
-  Serial.print("Distância: ");
-  Serial.print(distanciaCm);
-  Serial.println(" cm");
-
-  delay(500);
-}</div>
-
-        <p class="codigo-titulo">5. PIR HC-SR501 — Detecção de Movimento</p>
-        <div class="codigo-box">#define PINO_PIR 3
-#define PINO_LED 13
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(PINO_PIR, INPUT);
-  pinMode(PINO_LED, OUTPUT);
-}
-
-void loop() {
-  int movimento = digitalRead(PINO_PIR); // Lê o estado do sensor PIR
-
-  if (movimento == HIGH) {
-    digitalWrite(PINO_LED, HIGH);         // Acende o LED ao detectar presença
-    Serial.println("Movimento detectado!");
-  } else {
-    digitalWrite(PINO_LED, LOW);
-  }
-
-  delay(200);
-}</div>
-
-        <p class="codigo-titulo">6. MQ-2 — Detecção de Gás/Fumaça</p>
-        <div class="codigo-box">#define PINO_MQ2 A1
-#define LIMIAR_GAS 400 // Limiar de segurança (ajustar conforme calibração)
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  int nivelGas = analogRead(PINO_MQ2); // Lê a concentração de gás (0-1023)
-
-  Serial.print("Nível de gás: ");
-  Serial.println(nivelGas);
-
-  if (nivelGas > LIMIAR_GAS) {
-    Serial.println("ALERTA: concentração de gás elevada!");
-    // Aqui entraria o acionamento de um buzzer/relé de exaustão
-  }
-
-  delay(1000);
-}</div>
-
-        <p class="codigo-titulo">7. Sensor Capacitivo de Umidade do Solo — Irrigação Automática</p>
-        <div class="codigo-box">#define PINO_SOLO A2
-#define PINO_BOMBA 7
-#define UMIDADE_MINIMA 400 // Quanto menor a leitura, mais úmido o solo
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(PINO_BOMBA, OUTPUT);
-}
-
-void loop() {
-  int leituraSolo = analogRead(PINO_SOLO); // Lê a umidade do solo
-
-  Serial.print("Umidade do solo (bruto): ");
-  Serial.println(leituraSolo);
-
-  if (leituraSolo > UMIDADE_MINIMA) {
-    digitalWrite(PINO_BOMBA, HIGH); // Solo seco: liga a bomba de irrigação
-    Serial.println("Solo seco - irrigando...");
-  } else {
-    digitalWrite(PINO_BOMBA, LOW);  // Solo úmido: mantém a bomba desligada
-  }
-
-  delay(2000);
-}</div>
-
-        <p class="codigo-titulo">8. ACS712 — Medição de Corrente Elétrica</p>
-        <div class="codigo-box">#define PINO_ACS712 A3
-const float SENSIBILIDADE = 0.185; // V/A para o modelo de 5A
-const float VOFFSET = 2.5;         // Tensão de repouso (sem corrente)
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  int leitura = analogRead(PINO_ACS712);
-  float tensao = (leitura / 1023.0) * 5.0;
-
-  float corrente = (tensao - VOFFSET) / SENSIBILIDADE;
-
-  Serial.print("Corrente medida: ");
-  Serial.print(corrente);
-  Serial.println(" A");
-
-  delay(1000);
-}</div>
-
-        <p class="codigo-titulo">9. Sensor Hall A3144 — Contagem de Rotações (RPM)</p>
-        <div class="codigo-box">#define PINO_HALL 2
-volatile int contadorPulsos = 0;
-
-void contarPulso() {
-  contadorPulsos++; // Executado a cada vez que o ímã passa pelo sensor
-}
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(PINO_HALL, INPUT);
-  // Interrupção externa: chama contarPulso() a cada borda de descida
-  attachInterrupt(digitalPinToInterrupt(PINO_HALL), contarPulso, FALLING);
-}
-
-void loop() {
-  contadorPulsos = 0;
-  delay(1000); // Conta pulsos durante 1 segundo
-
-  int rpm = contadorPulsos * 60; // 1 pulso por volta = pulsos/seg * 60
-  Serial.print("Velocidade: ");
-  Serial.print(rpm);
-  Serial.println(" RPM");
-}</div>
-
-        <p class="codigo-titulo">10. RFID MFRC522 — Controle de Acesso</p>
-        <div class="codigo-box">#include &lt;SPI.h&gt;
-#include &lt;MFRC522.h&gt;
-
-#define PINO_SS 10
-#define PINO_RST 9
-
-MFRC522 leitorRFID(PINO_SS, PINO_RST);
-
-void setup() {
-  Serial.begin(9600);
-  SPI.begin();
-  leitorRFID.PCD_Init(); // Inicializa o módulo RFID
-}
-
-void loop() {
-  // Verifica se há um novo cartão presente e se é possível ler seu UID
-  if (!leitorRFID.PICC_IsNewCardPresent() || !leitorRFID.PICC_ReadCardSerial()) {
-    return;
-  }
-
-  Serial.print("UID do cartão: ");
-  for (byte i = 0; i &lt; leitorRFID.uid.size; i++) {
-    Serial.print(leitorRFID.uid.uidByte[i], HEX);
-    Serial.print(" ");
-  }
-  Serial.println();
-
-  leitorRFID.PICC_HaltA(); // Finaliza a leitura do cartão atual
-}</div>
-      </section>
-    </main>
-    <br>
-    <footer>
-      <p>By NexTheis &copy; &trade; </p>
-    </footer>
+        // Mede o tempo até o eco retornar
+        long tempoEco = pulseIn(PINO_ECHO, HIGH);
+
+        // Calcula a distância: (tempo * velocidade do som) / 2 (ida e volta)
+        float distanciaCm = (tempoEco * 0.0343) / 2;
+
+        Serial.print("Distância: ");
+        Serial.print(distanciaCm);
+        Serial.println(" cm");
+
+        delay(500);
+        }</div>
+
+      <p class="codigo-titulo">5. PIR HC-SR501 — Detecção de Movimento</p>
+      <div class="codigo-box">#define PINO_PIR 3
+        #define PINO_LED 13
+
+        void setup() {
+        Serial.begin(9600);
+        pinMode(PINO_PIR, INPUT);
+        pinMode(PINO_LED, OUTPUT);
+        }
+
+        void loop() {
+        int movimento = digitalRead(PINO_PIR); // Lê o estado do sensor PIR
+
+        if (movimento == HIGH) {
+        digitalWrite(PINO_LED, HIGH); // Acende o LED ao detectar presença
+        Serial.println("Movimento detectado!");
+        } else {
+        digitalWrite(PINO_LED, LOW);
+        }
+
+        delay(200);
+        }</div>
+
+      <p class="codigo-titulo">6. MQ-2 — Detecção de Gás/Fumaça</p>
+      <div class="codigo-box">#define PINO_MQ2 A1
+        #define LIMIAR_GAS 400 // Limiar de segurança (ajustar conforme calibração)
+
+        void setup() {
+        Serial.begin(9600);
+        }
+
+        void loop() {
+        int nivelGas = analogRead(PINO_MQ2); // Lê a concentração de gás (0-1023)
+
+        Serial.print("Nível de gás: ");
+        Serial.println(nivelGas);
+
+        if (nivelGas > LIMIAR_GAS) {
+        Serial.println("ALERTA: concentração de gás elevada!");
+        // Aqui entraria o acionamento de um buzzer/relé de exaustão
+        }
+
+        delay(1000);
+        }</div>
+
+      <p class="codigo-titulo">7. Sensor Capacitivo de Umidade do Solo — Irrigação Automática</p>
+      <div class="codigo-box">#define PINO_SOLO A2
+        #define PINO_BOMBA 7
+        #define UMIDADE_MINIMA 400 // Quanto menor a leitura, mais úmido o solo
+
+        void setup() {
+        Serial.begin(9600);
+        pinMode(PINO_BOMBA, OUTPUT);
+        }
+
+        void loop() {
+        int leituraSolo = analogRead(PINO_SOLO); // Lê a umidade do solo
+
+        Serial.print("Umidade do solo (bruto): ");
+        Serial.println(leituraSolo);
+
+        if (leituraSolo > UMIDADE_MINIMA) {
+        digitalWrite(PINO_BOMBA, HIGH); // Solo seco: liga a bomba de irrigação
+        Serial.println("Solo seco - irrigando...");
+        } else {
+        digitalWrite(PINO_BOMBA, LOW); // Solo úmido: mantém a bomba desligada
+        }
+
+        delay(2000);
+        }</div>
+
+      <p class="codigo-titulo">8. ACS712 — Medição de Corrente Elétrica</p>
+      <div class="codigo-box">#define PINO_ACS712 A3
+        const float SENSIBILIDADE = 0.185; // V/A para o modelo de 5A
+        const float VOFFSET = 2.5; // Tensão de repouso (sem corrente)
+
+        void setup() {
+        Serial.begin(9600);
+        }
+
+        void loop() {
+        int leitura = analogRead(PINO_ACS712);
+        float tensao = (leitura / 1023.0) * 5.0;
+
+        float corrente = (tensao - VOFFSET) / SENSIBILIDADE;
+
+        Serial.print("Corrente medida: ");
+        Serial.print(corrente);
+        Serial.println(" A");
+
+        delay(1000);
+        }</div>
+
+      <p class="codigo-titulo">9. Sensor Hall A3144 — Contagem de Rotações (RPM)</p>
+      <div class="codigo-box">#define PINO_HALL 2
+        volatile int contadorPulsos = 0;
+
+        void contarPulso() {
+        contadorPulsos++; // Executado a cada vez que o ímã passa pelo sensor
+        }
+
+        void setup() {
+        Serial.begin(9600);
+        pinMode(PINO_HALL, INPUT);
+        // Interrupção externa: chama contarPulso() a cada borda de descida
+        attachInterrupt(digitalPinToInterrupt(PINO_HALL), contarPulso, FALLING);
+        }
+
+        void loop() {
+        contadorPulsos = 0;
+        delay(1000); // Conta pulsos durante 1 segundo
+
+        int rpm = contadorPulsos * 60; // 1 pulso por volta = pulsos/seg * 60
+        Serial.print("Velocidade: ");
+        Serial.print(rpm);
+        Serial.println(" RPM");
+        }</div>
+
+      <p class="codigo-titulo">10. RFID MFRC522 — Controle de Acesso</p>
+      <div class="codigo-box">#include &lt;SPI.h&gt;
+        #include &lt;MFRC522.h&gt;
+
+        #define PINO_SS 10
+        #define PINO_RST 9
+
+        MFRC522 leitorRFID(PINO_SS, PINO_RST);
+
+        void setup() {
+        Serial.begin(9600);
+        SPI.begin();
+        leitorRFID.PCD_Init(); // Inicializa o módulo RFID
+        }
+
+        void loop() {
+        // Verifica se há um novo cartão presente e se é possível ler seu UID
+        if (!leitorRFID.PICC_IsNewCardPresent() || !leitorRFID.PICC_ReadCardSerial()) {
+        return;
+        }
+
+        Serial.print("UID do cartão: ");
+        for (byte i = 0; i &lt; leitorRFID.uid.size; i++) {
+        Serial.print(leitorRFID.uid.uidByte[i], HEX);
+        Serial.print(" ");
+        }
+        Serial.println();
+
+        leitorRFID.PICC_HaltA(); // Finaliza a leitura do cartão atual
+        }</div>
+    </section>
+  </main>
+  <br>
+  <footer>
+    <p>By NexTheis &copy; &trade; </p>
+  </footer>
 </body>
+
 </html>

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./java.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
-    <title>ESP8266 / NodeMCU</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./java.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./img/ChatGPT_Image_1_12_2025__19_52_46-removebg-preview.png" type="image/png">
+  <title>ESP8266 / NodeMCU</title>
 </head>
+
 <body>
-    <header>
+  <header>
     <div class="off-screen-menu">
       <ul>
         <li><a href="./index.html">Início</a></li>
@@ -30,272 +32,375 @@
       </div>
       <h1 class="marca">NexTheis IoT</h1>
     </nav>
-    </header>
-    <br><br>
-    <main>
-      <h1 class="titulo">ESP8266 / NodeMCU</h1>
-      <p class="subtitulo">Conceito, características técnicas e circuitos práticos com o microcontrolador Wi-Fi mais popular do mercado maker</p>
+  </header>
+  <br><br>
+  <main>
+    <h1 class="titulo">ESP8266 / NodeMCU</h1>
+    <p class="subtitulo">Conceito, características técnicas e circuitos práticos com o microcontrolador Wi-Fi mais
+      popular do mercado maker</p>
 
-      <section class="p0">
-        <p class="p1">O que é o ESP8266?</p>
-        <br>
-        <p class="p2">O ESP8266 é um microcontrolador com Wi-Fi integrado, desenvolvido pela empresa chinesa Espressif Systems e lançado em 2014. Diferente do Arduino Uno tradicional, que precisa de um módulo ou shield externo para se conectar à internet, o ESP8266 já nasce com um rádio Wi-Fi 802.11 b/g/n embutido no próprio chip, o que o tornou uma das soluções mais baratas e populares para projetos de Internet das Coisas (IoT).</p>
-        <br>
-        <p class="p2">O chip por si só é vendido em módulos pequenos (como o ESP-01, ESP-07, ESP-12E/F), mas a forma mais usada por estudantes e makers é através de uma placa de desenvolvimento chamada <strong>NodeMCU</strong>, que integra o módulo ESP8266 (geralmente o ESP-12E), um conversor USB-serial, regulador de tensão e pinos no padrão que facilita o uso em protoboard — de forma parecida com o Arduino Uno.</p>
-      </section>
+    <section class="p0">
+      <p class="p1">O que é o ESP8266?</p>
+      <br>
+      <p class="p2">O ESP8266 é um microcontrolador com Wi-Fi integrado, desenvolvido pela empresa chinesa Espressif
+        Systems e lançado em 2014. Diferente do Arduino Uno tradicional, que precisa de um módulo ou shield externo para
+        se conectar à internet, o ESP8266 já nasce com um rádio Wi-Fi 802.11 b/g/n embutido no próprio chip, o que o
+        tornou uma das soluções mais baratas e populares para projetos de Internet das Coisas (IoT).</p>
+      <br>
+      <p class="p2">O chip por si só é vendido em módulos pequenos (como o ESP-01, ESP-07, ESP-12E/F), mas a forma mais
+        usada por estudantes e makers é através de uma placa de desenvolvimento chamada <strong>NodeMCU</strong>, que
+        integra o módulo ESP8266 (geralmente o ESP-12E), um conversor USB-serial, regulador de tensão e pinos no padrão
+        que facilita o uso em protoboard — de forma parecida com o Arduino Uno.</p>
+    </section>
 
-      <section class="p0">
-        <p class="p1">Características Técnicas</p>
-        <br>
-        <table class="tabela-specs">
-          <tr><th>Característica</th><th>Especificação</th></tr>
-          <tr><td>Fabricante</td><td>Espressif Systems (China)</td></tr>
-          <tr><td>Processador</td><td>Tensilica L106, 32 bits, single-core</td></tr>
-          <tr><td>Frequência de clock</td><td>80 MHz (podendo chegar a 160 MHz)</td></tr>
-          <tr><td>Wi-Fi</td><td>802.11 b/g/n integrado (2,4 GHz)</td></tr>
-          <tr><td>Memória Flash</td><td>Geralmente 4 MB na placa NodeMCU</td></tr>
-          <tr><td>Tensão lógica</td><td>3,3V (⚠️ não tolera 5V nos pinos digitais)</td></tr>
-          <tr><td>Entradas analógicas</td><td>1 pino (A0), 10 bits, faixa de 0 a 3,3V</td></tr>
-          <tr><td>Pinos digitais úteis (NodeMCU)</td><td>Cerca de 9 (D0 a D8)</td></tr>
-          <tr><td>Programação</td><td>Arduino IDE, linguagem C/C++ (mesma lógica do Arduino Uno)</td></tr>
-        </table>
-      </section>
+    <section class="p0">
+      <p class="p1">Características Técnicas</p>
+      <br>
+      <table class="tabela-specs">
+        <tr>
+          <th>Característica</th>
+          <th>Especificação</th>
+        </tr>
+        <tr>
+          <td>Fabricante</td>
+          <td>Espressif Systems (China)</td>
+        </tr>
+        <tr>
+          <td>Processador</td>
+          <td>Tensilica L106, 32 bits, single-core</td>
+        </tr>
+        <tr>
+          <td>Frequência de clock</td>
+          <td>80 MHz (podendo chegar a 160 MHz)</td>
+        </tr>
+        <tr>
+          <td>Wi-Fi</td>
+          <td>802.11 b/g/n integrado (2,4 GHz)</td>
+        </tr>
+        <tr>
+          <td>Memória Flash</td>
+          <td>Geralmente 4 MB na placa NodeMCU</td>
+        </tr>
+        <tr>
+          <td>Tensão lógica</td>
+          <td>3,3V (⚠️ não tolera 5V nos pinos digitais)</td>
+        </tr>
+        <tr>
+          <td>Entradas analógicas</td>
+          <td>1 pino (A0), 10 bits, faixa de 0 a 3,3V</td>
+        </tr>
+        <tr>
+          <td>Pinos digitais úteis (NodeMCU)</td>
+          <td>Cerca de 9 (D0 a D8)</td>
+        </tr>
+        <tr>
+          <td>Programação</td>
+          <td>Arduino IDE, linguagem C/C++ (mesma lógica do Arduino Uno)</td>
+        </tr>
+      </table>
+    </section>
 
-      <section class="p0">
-        <p class="p1">Pinagem da Placa NodeMCU</p>
-        <br>
-        <p class="p2">Na NodeMCU, os pinos são identificados por rótulos "D" impressos na placa (D0, D1, D2...), mas internamente cada um corresponde a um GPIO (General Purpose Input/Output) diferente do chip ESP8266. É importante conhecer essa correspondência ao programar, pois alguns pinos têm restrições de uso (por exemplo, D0 não suporta interrupções e alguns pinos são usados internamente durante o boot).</p>
-        <br>
-        <table class="tabela-specs">
-          <tr><th>Rótulo na placa</th><th>GPIO correspondente</th><th>Observação</th></tr>
-          <tr><td>D0</td><td>GPIO16</td><td>Sem suporte a interrupção/PWM</td></tr>
-          <tr><td>D1</td><td>GPIO5</td><td>Muito usado para I2C (SCL)</td></tr>
-          <tr><td>D2</td><td>GPIO4</td><td>Muito usado para I2C (SDA)</td></tr>
-          <tr><td>D3</td><td>GPIO0</td><td>Envolvido no modo de gravação (flash)</td></tr>
-          <tr><td>D4</td><td>GPIO2</td><td>LED azul embutido na maioria das placas</td></tr>
-          <tr><td>D5</td><td>GPIO14</td><td>Usado para SPI (SCK)</td></tr>
-          <tr><td>D6</td><td>GPIO12</td><td>Usado para SPI (MISO)</td></tr>
-          <tr><td>D7</td><td>GPIO13</td><td>Usado para SPI (MOSI)</td></tr>
-          <tr><td>D8</td><td>GPIO15</td><td>Envolvido no modo de gravação (flash)</td></tr>
-          <tr><td>A0</td><td>ADC0</td><td>Única entrada analógica, 0 a 3,3V</td></tr>
-        </table>
-      </section>
+    <section class="p0">
+      <p class="p1">Pinagem da Placa NodeMCU</p>
+      <br>
+      <p class="p2">Na NodeMCU, os pinos são identificados por rótulos "D" impressos na placa (D0, D1, D2...), mas
+        internamente cada um corresponde a um GPIO (General Purpose Input/Output) diferente do chip ESP8266. É
+        importante conhecer essa correspondência ao programar, pois alguns pinos têm restrições de uso (por exemplo, D0
+        não suporta interrupções e alguns pinos são usados internamente durante o boot).</p>
+      <br>
+      <table class="tabela-specs">
+        <tr>
+          <th>Rótulo na placa</th>
+          <th>GPIO correspondente</th>
+          <th>Observação</th>
+        </tr>
+        <tr>
+          <td>D0</td>
+          <td>GPIO16</td>
+          <td>Sem suporte a interrupção/PWM</td>
+        </tr>
+        <tr>
+          <td>D1</td>
+          <td>GPIO5</td>
+          <td>Muito usado para I2C (SCL)</td>
+        </tr>
+        <tr>
+          <td>D2</td>
+          <td>GPIO4</td>
+          <td>Muito usado para I2C (SDA)</td>
+        </tr>
+        <tr>
+          <td>D3</td>
+          <td>GPIO0</td>
+          <td>Envolvido no modo de gravação (flash)</td>
+        </tr>
+        <tr>
+          <td>D4</td>
+          <td>GPIO2</td>
+          <td>LED azul embutido na maioria das placas</td>
+        </tr>
+        <tr>
+          <td>D5</td>
+          <td>GPIO14</td>
+          <td>Usado para SPI (SCK)</td>
+        </tr>
+        <tr>
+          <td>D6</td>
+          <td>GPIO12</td>
+          <td>Usado para SPI (MISO)</td>
+        </tr>
+        <tr>
+          <td>D7</td>
+          <td>GPIO13</td>
+          <td>Usado para SPI (MOSI)</td>
+        </tr>
+        <tr>
+          <td>D8</td>
+          <td>GPIO15</td>
+          <td>Envolvido no modo de gravação (flash)</td>
+        </tr>
+        <tr>
+          <td>A0</td>
+          <td>ADC0</td>
+          <td>Única entrada analógica, 0 a 3,3V</td>
+        </tr>
+      </table>
+    </section>
 
-      <section class="p0">
-        <p class="p1">ESP8266 x Arduino Uno</p>
-        <br>
-        <table class="tabela-specs">
-          <tr><th>Característica</th><th>ESP8266 (NodeMCU)</th><th>Arduino Uno</th></tr>
-          <tr><td>Wi-Fi integrado</td><td>Sim</td><td>Não (precisa de módulo externo)</td></tr>
-          <tr><td>Tensão lógica dos pinos</td><td>3,3V</td><td>5V</td></tr>
-          <tr><td>Clock</td><td>80-160 MHz</td><td>16 MHz</td></tr>
-          <tr><td>Entradas analógicas</td><td>1 (A0)</td><td>6 (A0-A5)</td></tr>
-          <tr><td>Custo aproximado</td><td>Baixo</td><td>Baixo/médio</td></tr>
-        </table>
-        <br>
-        <p class="p2">Por causa da tensão lógica de 3,3V, é preciso ter atenção ao ligar sensores projetados para 5V (como o HC-SR04 e o DHT11/DHT22) diretamente aos pinos do ESP8266 — em projetos mais rigorosos, recomenda-se o uso de divisores de tensão ou conversores de nível lógico para proteger as entradas do módulo.</p>
-      </section>
+    <section class="p0">
+      <p class="p1">ESP8266 x Arduino Uno</p>
+      <br>
+      <table class="tabela-specs">
+        <tr>
+          <th>Característica</th>
+          <th>ESP8266 (NodeMCU)</th>
+          <th>Arduino Uno</th>
+        </tr>
+        <tr>
+          <td>Wi-Fi integrado</td>
+          <td>Sim</td>
+          <td>Não (precisa de módulo externo)</td>
+        </tr>
+        <tr>
+          <td>Tensão lógica dos pinos</td>
+          <td>3,3V</td>
+          <td>5V</td>
+        </tr>
+        <tr>
+          <td>Clock</td>
+          <td>80-160 MHz</td>
+          <td>16 MHz</td>
+        </tr>
+        <tr>
+          <td>Entradas analógicas</td>
+          <td>1 (A0)</td>
+          <td>6 (A0-A5)</td>
+        </tr>
+        <tr>
+          <td>Custo aproximado</td>
+          <td>Baixo</td>
+          <td>Baixo/médio</td>
+        </tr>
+      </table>
+      <br>
+      <p class="p2">Por causa da tensão lógica de 3,3V, é preciso ter atenção ao ligar sensores projetados para 5V (como
+        o HC-SR04 e o DHT11/DHT22) diretamente aos pinos do ESP8266 — em projetos mais rigorosos, recomenda-se o uso de
+        divisores de tensão ou conversores de nível lógico para proteger as entradas do módulo.</p>
+    </section>
 
-      <section class="p0">
-        <p class="p1">Aplicações em IoT</p>
-        <br>
-        <p class="p2">Por unir baixo custo, tamanho reduzido e conectividade Wi-Fi nativa, o ESP8266 é amplamente usado em automação residencial (controle de lâmpadas e tomadas via internet), estações meteorológicas conectadas, sistemas de irrigação inteligente, monitoramento remoto de sensores via protocolos como <a href="./comunicacao.html" style="color:#3f6fe0;">MQTT e HTTP</a>, e protótipos de produtos IoT antes de migrarem para soluções industriais mais robustas.</p>
-      </section>
+    <section class="p0">
+      <p class="p1">Aplicações em IoT</p>
+      <br>
+      <p class="p2">Por unir baixo custo, tamanho reduzido e conectividade Wi-Fi nativa, o ESP8266 é amplamente usado em
+        automação residencial (controle de lâmpadas e tomadas via internet), estações meteorológicas conectadas,
+        sistemas de irrigação inteligente, monitoramento remoto de sensores via protocolos como <a
+          href="./comunicacao.html" style="color:#3f6fe0;">MQTT e HTTP</a>, e protótipos de produtos IoT antes de
+        migrarem para soluções industriais mais robustas.</p>
+    </section>
 
-      <h2 class="titulo" style="font-size:2rem; margin-top:60px;">Circuitos Práticos</h2>
-      <p class="subtitulo">Três circuitos montados com a NodeMCU ESP8266, cada um explorando um tipo diferente de sensor</p>
+    <h2 class="titulo" style="font-size:2rem; margin-top:60px;">Circuitos Práticos</h2>
+    <p class="subtitulo">Três circuitos montados com a NodeMCU ESP8266, cada um explorando um tipo diferente de sensor
+    </p>
 
-      <div class="ancora-menu">
-        <a class="ancora-link" href="#circuito1">Circuito 1 — HC-SR04 + LED</a>
-        <a class="ancora-link" href="#circuito2">Circuito 2 — PIR + LDR + LED</a>
-        <a class="ancora-link" href="#circuito3">Circuito 3 — TMP36 + 3 LEDs</a>
+    <div class="ancora-menu">
+      <a class="ancora-link" href="#circuito1">Circuito 1 — HC-SR04 + LED</a>
+      <a class="ancora-link" href="#circuito2">Circuito 2 — PIR + LDR + LED</a>
+      <a class="ancora-link" href="#circuito3">Circuito 3 — TMP36 + 3 LEDs</a>
+    </div>
+
+    <article class="desafio-card" id="circuito1">
+      <h2>Circuito 1 — Sensor de Distância com Alerta</h2>
+      <p><strong>Componentes:</strong> NodeMCU ESP8266, sensor ultrassônico HC-SR04, LED.</p>
+      <p>O sensor ultrassônico mede continuamente a distância até um obstáculo. Sempre que um objeto é detectado a 20 cm
+        ou menos, o LED acende como alerta de proximidade — a mesma lógica usada em sensores de ré e sistemas antichoque
+        simples.</p>
+
+      <h4>Vídeo de Demonstração</h4>
+      <div class="video-placeholder">
+        <div class="video-placeholder">
+          <iframe src="./img/distancia_esp.mp4" title="Vídeo Circuito 1 - HC-SR04 + LED" allowfullscreen></iframe>
+        </div>
+        <div class="icone-video">🎬</div>
+        <p>Espaço reservado para o vídeo de demonstração do Circuito 1.<br>Substitua este bloco por um &lt;iframe&gt; do
+          YouTube/Drive ou por uma tag &lt;video&gt;.</p>
       </div>
 
-      <!-- CIRCUITO 1 -->
-      <article class="desafio-card" id="circuito1">
-        <h2>Circuito 1 — Sensor de Distância com Alerta</h2>
-        <p><strong>Componentes:</strong> NodeMCU ESP8266, sensor ultrassônico HC-SR04, LED.</p>
-        <p>O sensor ultrassônico mede continuamente a distância até um obstáculo. Sempre que um objeto é detectado a 20 cm ou menos, o LED acende como alerta de proximidade — a mesma lógica usada em sensores de ré e sistemas antichoque simples.</p>
+      <h4>Código em C++</h4>
+      <div class="codigo-box">#define TRIG D4
+        #define ECHO D5
+        #define LED D2
 
-        <h4>Vídeo de Demonstração</h4>
+        void setup() {
+        pinMode(TRIG, OUTPUT);
+        pinMode(ECHO, INPUT);
+        pinMode(LED, OUTPUT);
+
+        digitalWrite(LED, LOW);
+        Serial.begin(115200);
+        }
+
+        void loop() {
+        digitalWrite(TRIG, LOW);
+        delayMicroseconds(2);
+
+        digitalWrite(TRIG, HIGH);
+        delayMicroseconds(10);
+        digitalWrite(TRIG, LOW);
+
+        long tempo = pulseIn(ECHO, HIGH);
+        float distancia = tempo * 0.0343 / 2;
+
+        Serial.print("Distancia: ");
+        Serial.print(distancia);
+        Serial.println(" cm");
+
+        if (distancia &lt;= 20 && distancia &gt; 0) {
+        digitalWrite(LED, HIGH);
+        } else {
+        digitalWrite(LED, LOW);
+        }
+
+        delay(100);
+        }</div>
+    </article>
+
+    <article class="desafio-card" id="circuito2">
+      <h2>Circuito 2 — Sensor de Presença com Luminosidade</h2>
+      <p><strong>Componentes:</strong> NodeMCU ESP8266, sensor PIR, módulo LDR, LED.</p>
+      <p>O LED só acende quando as duas condições são verdadeiras ao mesmo tempo: presença detectada pelo PIR e ambiente
+        considerado escuro pelo módulo LDR — a mesma lógica de iluminação automática usada em corredores e áreas comuns.
+      </p>
+
+      <h4>Vídeo de Demonstração</h4>
+      <div class="video-placeholder">
         <div class="video-placeholder">
-          <!--
-            Espaço reservado para o vídeo do Circuito 1.
-            Substitua esta div "video-placeholder" por um embed real, por exemplo:
-
-            <div class="video-placeholder">
-              <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"
-                      title="Vídeo Circuito 1 - HC-SR04 + LED"
-                      allowfullscreen></iframe>
-            </div>
-          -->
-          <div class="icone-video">🎬</div>
-          <p>Espaço reservado para o vídeo de demonstração do Circuito 1.<br>Substitua este bloco por um &lt;iframe&gt; do YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+          <iframe src="./img/iluminosidade_esp.mp4" title="Vídeo Circuito 2 - PIR + LDR + LED" allowfullscreen></iframe>
         </div>
+        <div class="icone-video">🎬</div>
+        <p>Espaço reservado para o vídeo de demonstração do Circuito 2.<br>Substitua este bloco por um &lt;iframe&gt; do
+          YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+      </div>
 
-        <h4>Código em C++</h4>
-        <div class="codigo-box">#define TRIG D4
-#define ECHO D5
-#define LED D2
+      <h4>Código em C++</h4>
+      <div class="codigo-box">#define PIR D6
+        #define LDR D5
+        #define LED D2
 
-void setup() {
-  pinMode(TRIG, OUTPUT);
-  pinMode(ECHO, INPUT);
-  pinMode(LED, OUTPUT);
+        void setup() {
+        pinMode(PIR, INPUT);
+        pinMode(LDR, INPUT);
+        pinMode(LED, OUTPUT);
 
-  digitalWrite(LED, LOW);
-  Serial.begin(115200);
-}
+        digitalWrite(LED, LOW);
+        Serial.begin(115200);
+        }
 
-void loop() {
-  digitalWrite(TRIG, LOW);
-  delayMicroseconds(2);
+        void loop() {
+        int movimento = digitalRead(PIR);
+        int luz = digitalRead(LDR);
 
-  digitalWrite(TRIG, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(TRIG, LOW);
+        Serial.print("Movimento: ");
+        Serial.print(movimento);
+        Serial.print(" | LDR: ");
+        Serial.println(luz);
 
-  long tempo = pulseIn(ECHO, HIGH);
-  float distancia = tempo * 0.0343 / 2;
+        if (movimento == HIGH && luz == HIGH) {
+        digitalWrite(LED, HIGH);
+        } else {
+        digitalWrite(LED, LOW);
+        }
 
-  Serial.print("Distancia: ");
-  Serial.print(distancia);
-  Serial.println(" cm");
+        delay(200);
+        }</div>
+    </article>
 
-  if (distancia &lt;= 20 && distancia &gt; 0) {
-    digitalWrite(LED, HIGH);
-  } else {
-    digitalWrite(LED, LOW);
-  }
 
-  delay(100);
-}</div>
-      </article>
+    <article class="desafio-card" id="circuito3">
+      <h2>Circuito 3 — Monitor de Temperatura com Indicadores</h2>
+      <p><strong>Componentes:</strong> NodeMCU ESP8266, sensor de temperatura TMP36, 3 LEDs (verde, amarelo, vermelho).
+      </p>
+      <p>A temperatura lida pelo TMP36 é convertida para graus Celsius e classificada em três faixas: abaixo de 25°C
+        acende o LED verde (ideal), entre 25°C e 30°C acende o amarelo (atenção), e acima de 30°C acende o vermelho
+        (alerta) — como um semáforo de temperatura.</p>
 
-      <!-- CIRCUITO 2 -->
-      <article class="desafio-card" id="circuito2">
-        <h2>Circuito 2 — Sensor de Presença com Luminosidade</h2>
-        <p><strong>Componentes:</strong> NodeMCU ESP8266, sensor PIR, módulo LDR, LED.</p>
-        <p>O LED só acende quando as duas condições são verdadeiras ao mesmo tempo: presença detectada pelo PIR e ambiente considerado escuro pelo módulo LDR — a mesma lógica de iluminação automática usada em corredores e áreas comuns.</p>
-
-        <h4>Vídeo de Demonstração</h4>
+      <h4>Vídeo de Demonstração</h4>
+      <div class="video-placeholder">
         <div class="video-placeholder">
-          <!--
-            Espaço reservado para o vídeo do Circuito 2.
-            Substitua esta div "video-placeholder" por um embed real, por exemplo:
-
-            <div class="video-placeholder">
-              <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"
-                      title="Vídeo Circuito 2 - PIR + LDR + LED"
-                      allowfullscreen></iframe>
-            </div>
-          -->
-          <div class="icone-video">🎬</div>
-          <p>Espaço reservado para o vídeo de demonstração do Circuito 2.<br>Substitua este bloco por um &lt;iframe&gt; do YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+          <iframe src="./img/tresleds_esp.mp4" title="Vídeo Circuito 3 - TMP36 + 3 LEDs" allowfullscreen></iframe>
         </div>
+        <div class="icone-video">🎬</div>
+        <p>Espaço reservado para o vídeo de demonstração do Circuito 3.<br>Substitua este bloco por um &lt;iframe&gt; do
+          YouTube/Drive ou por uma tag &lt;video&gt;.</p>
+      </div>
 
-        <h4>Código em C++</h4>
-        <div class="codigo-box">#define PIR D6
-#define LDR D5
-#define LED D2
+      <h4>Código em C++</h4>
+      <div class="codigo-box">#define LED_VERDE D1
+        #define LED_VERMELHO D2
+        #define LED_AMARELO D3
+        #define TMP36 A0
 
-void setup() {
-  pinMode(PIR, INPUT);
-  pinMode(LDR, INPUT);
-  pinMode(LED, OUTPUT);
+        void setup() {
+        pinMode(LED_VERDE, OUTPUT);
+        pinMode(LED_VERMELHO, OUTPUT);
+        pinMode(LED_AMARELO, OUTPUT);
 
-  digitalWrite(LED, LOW);
-  Serial.begin(115200);
-}
+        Serial.begin(115200);
 
-void loop() {
-  int movimento = digitalRead(PIR);
-  int luz = digitalRead(LDR);
+        digitalWrite(LED_VERDE, LOW);
+        digitalWrite(LED_AMARELO, LOW);
+        digitalWrite(LED_VERMELHO, LOW);
+        }
 
-  Serial.print("Movimento: ");
-  Serial.print(movimento);
-  Serial.print(" | LDR: ");
-  Serial.println(luz);
+        void loop() {
+        int valor = analogRead(TMP36);
+        float tensao = valor * (3.3 / 1023.0);
+        float temperatura = (tensao - 0.5) * 100.0;
 
-  if (movimento == HIGH && luz == HIGH) {
-    digitalWrite(LED, HIGH);
-  } else {
-    digitalWrite(LED, LOW);
-  }
+        Serial.print("Temperatura: ");
+        Serial.print(temperatura);
+        Serial.println(" C");
 
-  delay(200);
-}</div>
-      </article>
+        digitalWrite(LED_VERDE, LOW);
+        digitalWrite(LED_AMARELO, LOW);
+        digitalWrite(LED_VERMELHO, LOW);
 
-      <!-- CIRCUITO 3 -->
-      <article class="desafio-card" id="circuito3">
-        <h2>Circuito 3 — Monitor de Temperatura com Indicadores</h2>
-        <p><strong>Componentes:</strong> NodeMCU ESP8266, sensor de temperatura TMP36, 3 LEDs (verde, amarelo, vermelho).</p>
-        <p>A temperatura lida pelo TMP36 é convertida para graus Celsius e classificada em três faixas: abaixo de 25°C acende o LED verde (ideal), entre 25°C e 30°C acende o amarelo (atenção), e acima de 30°C acende o vermelho (alerta) — como um semáforo de temperatura.</p>
+        if (temperatura &lt; 25) {
+        digitalWrite(LED_VERDE, HIGH);
+        } else if (temperatura &gt;= 25 && temperatura &lt; 30) {
+        digitalWrite(LED_AMARELO, HIGH);
+        } else {
+        digitalWrite(LED_VERMELHO, HIGH);
+        }
 
-        <h4>Vídeo de Demonstração</h4>
-        <div class="video-placeholder">
-          <!--
-            Espaço reservado para o vídeo do Circuito 3.
-            Substitua esta div "video-placeholder" por um embed real, por exemplo:
+        delay(500);
+        }</div>
+    </article>
 
-            <div class="video-placeholder">
-              <iframe src="https://www.youtube.com/embed/SEU_CODIGO_AQUI"
-                      title="Vídeo Circuito 3 - TMP36 + 3 LEDs"
-                      allowfullscreen></iframe>
-            </div>
-          -->
-          <div class="icone-video">🎬</div>
-          <p>Espaço reservado para o vídeo de demonstração do Circuito 3.<br>Substitua este bloco por um &lt;iframe&gt; do YouTube/Drive ou por uma tag &lt;video&gt;.</p>
-        </div>
-
-        <h4>Código em C++</h4>
-        <div class="codigo-box">#define LED_VERDE D1
-#define LED_VERMELHO D2
-#define LED_AMARELO D3
-#define TMP36 A0
-
-void setup() {
-  pinMode(LED_VERDE, OUTPUT);
-  pinMode(LED_VERMELHO, OUTPUT);
-  pinMode(LED_AMARELO, OUTPUT);
-
-  Serial.begin(115200);
-
-  digitalWrite(LED_VERDE, LOW);
-  digitalWrite(LED_AMARELO, LOW);
-  digitalWrite(LED_VERMELHO, LOW);
-}
-
-void loop() {
-  int valor = analogRead(TMP36);
-  float tensao = valor * (3.3 / 1023.0);
-  float temperatura = (tensao - 0.5) * 100.0;
-
-  Serial.print("Temperatura: ");
-  Serial.print(temperatura);
-  Serial.println(" C");
-
-  digitalWrite(LED_VERDE, LOW);
-  digitalWrite(LED_AMARELO, LOW);
-  digitalWrite(LED_VERMELHO, LOW);
-
-  if (temperatura &lt; 25) {
-    digitalWrite(LED_VERDE, HIGH);
-  } else if (temperatura &gt;= 25 && temperatura &lt; 30) {
-    digitalWrite(LED_AMARELO, HIGH);
-  } else {
-    digitalWrite(LED_VERMELHO, HIGH);
-  }
-
-  delay(500);
-}</div>
-      </article>
-
-    </main>
-    <br>
-    <footer>
-      <p>By NexTheis &copy; &trade; </p>
-    </footer>
+  </main>
+  <br>
+  <footer>
+    <p>By NexTheis &copy; &trade; </p>
+  </footer>
 </body>
+
 </html>

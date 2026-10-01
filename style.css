@@ -237,10 +237,6 @@ button {
     color: white;
 }
 
-/* ======================================================
-   Estilos adicionados para o catálogo de Robôs Industriais
-   e Sensores IoT/Industriais (Unidade Curricular: IoT)
-   ====================================================== */
 
 .subtitulo {
     text-align: center;
@@ -302,10 +298,21 @@ button {
     margin: 4px 4px 4px 0;
 }
 
-.badge.azul { background: #2f5fb0; }
-.badge.verde { background: #2f8f4f; }
-.badge.laranja { background: #b06f2f; }
-.badge.vermelho { background: #b0402f; }
+.badge.azul {
+    background: #2f5fb0;
+}
+
+.badge.verde {
+    background: #2f8f4f;
+}
+
+.badge.laranja {
+    background: #b06f2f;
+}
+
+.badge.vermelho {
+    background: #b0402f;
+}
 
 .grid-catalogo {
     max-width: 1100px;
@@ -316,7 +323,8 @@ button {
     gap: 30px;
 }
 
-.card-robo, .card-sensor {
+.card-robo,
+.card-sensor {
     background: white;
     border-radius: 14px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
@@ -361,7 +369,8 @@ button {
     padding-left: 8px;
 }
 
-.card-corpo p, .card-corpo li {
+.card-corpo p,
+.card-corpo li {
     font-size: 0.98rem;
     color: #3a3a3a;
     text-align: justify;
@@ -381,7 +390,8 @@ button {
     font-size: 0.92rem;
 }
 
-.tabela-specs td, .tabela-specs th {
+.tabela-specs td,
+.tabela-specs th {
     border: 1px solid #ddd;
     padding: 6px 10px;
     text-align: left;
@@ -475,12 +485,29 @@ button {
     color: white;
 }
 
-.tag-sinal.digital { background: #2f8f4f; }
-.tag-sinal.analogico { background: #b06f2f; }
-.tag-sinal.i2c { background: #2f5fb0; }
-.tag-sinal.uart { background: #7a2fb0; }
-.tag-sinal.spi { background: #b02f7a; }
-.tag-sinal.mA { background: #444; }
+.tag-sinal.digital {
+    background: #2f8f4f;
+}
+
+.tag-sinal.analogico {
+    background: #b06f2f;
+}
+
+.tag-sinal.i2c {
+    background: #2f5fb0;
+}
+
+.tag-sinal.uart {
+    background: #7a2fb0;
+}
+
+.tag-sinal.spi {
+    background: #b02f7a;
+}
+
+.tag-sinal.mA {
+    background: #444;
+}
 
 .protocolo-card {
     background: white;
@@ -498,14 +525,20 @@ button {
 }
 
 @media (max-width: 700px) {
-    .p0 { padding: 25px 20px; margin: 40px 12px; }
-    .grid-catalogo { grid-template-columns: 1fr; }
-    .titulo { font-size: 2.1rem; }
+    .p0 {
+        padding: 25px 20px;
+        margin: 40px 12px;
+    }
+
+    .grid-catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo {
+        font-size: 2.1rem;
+    }
 }
 
-/* ======================================================
-   Estilos para a página de Desafios (Tinkercad)
-   ====================================================== */
 
 .desafio-card {
     background: white;
@@ -557,13 +590,11 @@ button {
 .video-placeholder {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: repeating-linear-gradient(
-        45deg,
-        #eef2f7,
-        #eef2f7 12px,
-        #e4e9ef 12px,
-        #e4e9ef 24px
-    );
+    background: repeating-linear-gradient(45deg,
+            #eef2f7,
+            #eef2f7 12px,
+            #e4e9ef 12px,
+            #e4e9ef 24px);
     border: 3px dashed #999;
     border-radius: 10px;
     display: flex;
@@ -593,9 +624,6 @@ button {
     border-radius: 8px;
     border: none;
 }
-/* ======================================================
-   Estilos da página de Quiz
-   ====================================================== */
 
 .escondido {
     display: none !important;
@@ -607,7 +635,8 @@ button {
     padding: 0 20px;
 }
 
-.quiz-intro-card, .quiz-resultado-card {
+.quiz-intro-card,
+.quiz-resultado-card {
     background: white;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
@@ -621,7 +650,8 @@ button {
     margin-bottom: 6px;
 }
 
-.quiz-intro-card h2, .quiz-resultado-card h2 {
+.quiz-intro-card h2,
+.quiz-resultado-card h2 {
     color: #272727;
     font-size: 1.6rem;
     margin-bottom: 14px;
@@ -693,7 +723,8 @@ button {
     margin-bottom: 18px;
 }
 
-.quiz-progresso-texto, #quiz-progresso-texto {
+.quiz-progresso-texto,
+#quiz-progresso-texto {
     font-size: 0.95rem;
     color: #666;
     display: block;
@@ -943,17 +974,18 @@ button {
 }
 
 @media (max-width: 600px) {
-    .quiz-container, .quiz-intro-card, .quiz-resultado-card {
+
+    .quiz-container,
+    .quiz-intro-card,
+    .quiz-resultado-card {
         padding: 26px 20px;
     }
+
     .quiz-resultado-numeros {
         flex-direction: column;
     }
 }
 
-/* ======================================================
-   Estilos do sistema de Ranking (localStorage, sem backend)
-   ====================================================== */
 
 .quiz-label-nome {
     display: block;
@@ -1109,6 +1141,7 @@ button {
         grid-template-columns: 34px 1fr 1fr;
         row-gap: 4px;
     }
+
     .ranking-data {
         text-align: left;
     }
